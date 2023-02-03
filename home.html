@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <img src="img/MapleStory_Logo.png" id="logo">
+    </header>
+
+    <form class="logIn-form">
+        <input
+        id="input" 
+        type="text"
+        required
+        maxlength="15"
+        placeholder="닉네임을 입력해주세요!"/>
+        <button id="login">로그인</button>
+    </form>
+    <div id="clock"></div>
+
+    <div class="quest">
+        <form class="todo-input">
+        <div id="greeting"></div>
+        <input
+        id="todo"
+        type="text"
+        required
+        placeholder="할 일을 입력해주세요!"/>
+    </form>
+    </div>
+    <div class="todo-list"></div>
+
+    //하이요
+    <div id="hi">hi</div>
+
+    <div id="quote">
+        <span id="sentence"></span>
+        <span id="author"></span>
+    </div>
+
+    <script src="js/greeting.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/todolist.js"></script>
+</body>
+</html>
