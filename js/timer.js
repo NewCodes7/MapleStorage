@@ -6,20 +6,23 @@ function timerStart() {
     timerNodeList.forEach((node) => {
       if(node.checked)  {
         const timerSet = Number(node.value);
-        let count = 0;
+        let count = -1;
         counting(); // start 눌렀을 때 바로 타이머 보이도록
         let ticTac = setInterval(counting, 1000);
-        setTimeout(timesUp, timerSet*1000);
+        let reset = setInterval(() => count=-1, timerSet*999); //왜 화살표 함수로?, 1000으로 했을 때 첫 주기에서 1초 더 홀딩함(4초 기다리고 바뀜)
+        setInterval(clear, 2 * 60 * 60 * 1000);
         function counting(){
-            let remainingSeconds = (timerSet+1) - (++count); //바로 timer 보이게 하면 1초 줄어든 상태로 시작함. 따라서 이를 보정하고자 +1
+            let remainingSeconds = timerSet - (++count); 
             let minutes = ('0' + Math.floor(remainingSeconds/60)).slice(-2);
             let seconds = ('0' + Math.floor(remainingSeconds%60)).slice(-2);
             remainingTime.innerText = `${minutes}:${seconds}`;
         }
-        function timesUp(){
+        function clear(){
             clearInterval(ticTac);
+            clearInterval(reset);
             remainingTime.innerText = '수고하셨습니다!';
         }
-      }
-    }) 
-  }
+    }
+}) 
+}
+
