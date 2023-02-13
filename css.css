@@ -11,7 +11,7 @@
     right:0px;
     bottom:0px;
     z-index: -1;
-    opacity:80%;
+    opacity:100%;
     }
 
 #logo{
@@ -61,7 +61,33 @@ li{
     left: 0;
 }
 
-#taxiText{
-    width: 500px;
-    height: 500px;
+body{
+    cursor: url('img/Cursor.0.0.png'), auto;
 }
+
+.taxi_div{
+    width: 200px;
+    height: 250px;
+    background-repeat: no-repeat;
+    position: relative;
+    background-size : contain;
+    background-position: center;
+    margin: auto;
+}
+
+.townIcon{
+    position: relative;
+    left: 19px;
+    top: 100px;
+}
+
+/* #헤네시스 {
+    position: absolute;
+    bottom: 1px;
+    z-index: 1;
+}
+
+#taxiText{
+    position: relative;
+    z-index: 0;
+} */
