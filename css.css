@@ -81,13 +81,14 @@ body{
     top: 100px;
 }
 
-/* #헤네시스 {
-    position: absolute;
-    bottom: 1px;
-    z-index: 1;
+.clickCursor{
+    animation: animate 0.8s infinite;
 }
-
-#taxiText{
-    position: relative;
-    z-index: 0;
-} */
+@keyframes animate{
+    0% { 
+      cursor: url("img/clickCursor1.png"), auto;
+    }
+    100% { 
+      cursor: url("img/clickCursor2.png"), auto;
+    }
+}
