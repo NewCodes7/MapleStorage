@@ -2,7 +2,8 @@ const taxi = document.getElementById('taxi');
 const bgm = document.getElementById('bgm');
 const background = document.getElementById('background');
 const taxiInfo = document.getElementById('taxiInfo');
-let waitingClick = document.querySelectorAll('.waitingClick');
+const waitingClick = document.querySelectorAll('.waitingClick');
+const logo = document.getElementById('logo');
 
 function onTaxi(){
     taxiInfo.style.backgroundImage = "url('img/SysOpt.backgrnd.png')";
@@ -25,7 +26,10 @@ function selectTown(townName){
 } 
 
 function moveTown(event){
-    background.src = `img/${event.target.id}.png`;
+    const townBackgrnd = `img/${event.target.id}.png`
+    background.style.backgroundImage = `url('img/${event.target.id}.png')`; //바깥만 백틱 감싸면 안은 알아서 되나보다
+    //background.style.backgroundImage = "url(`img/${event.target.id}.png`)"; 
+    //백틱기호 안되는거 당연!! css에 맞게 줘야지.. 이거는 es6만의 문법이니 그런데 src는 됐잖아? 빠같에 싸져있어서 그랬나 이거는 안에 싸져있으니
     bgm.src = `music/${event.target.id}.mp3`;
     taxiInfo.innerHTML = '';
     taxiInfo.style.backgroundImage = "url('')";
@@ -36,6 +40,16 @@ function moveTown(event){
     }, false); // false는 무엇을 나타내는거지?
 }
 
+function goHome(){
+    background.style.backgroundImage = "url('img/tutorial.jpeg')";
+    bgm.src = 'music/(구)로그인.mp3';
+    bgm.play();
+    bgm.addEventListener('ended', function() { 
+        this.currentTime = 0;
+        this.play();
+    }, false);
+}
+
 waitingClick.forEach(element => {
     element.addEventListener('mouseenter', event => event.target.classList.add('clickCursor'));
     element.addEventListener('mouseleave', event => event.target.classList.remove('clickCursor'));
@@ -43,3 +57,4 @@ waitingClick.forEach(element => {
 
 
 taxi.addEventListener('click', onTaxi);
+logo.addEventListener('click', goHome)

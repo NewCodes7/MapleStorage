@@ -3,7 +3,11 @@
 }
 
 #background{
-    position:absolute;
+    background-image: url('img/tutorial.jpeg');
+    background-repeat : no-repeat;
+    background-position : center;
+    background-size : cover;
+    position:fixed;
     width:100%;
     height:100%;
     left: 0px;
@@ -15,7 +19,7 @@
     }
 
 #logo{
-    width: 22%;
+    width: 22%;                   
     display: block;
     margin: 0px auto;
 }
@@ -91,4 +95,10 @@ body{
     100% { 
       cursor: url("img/clickCursor2.png"), auto;
     }
+}
+
+#taxi{
+    position: sticky;
+    top: 565px;
+    right: 100px;
 }
