@@ -38,12 +38,6 @@
     height: 28px;
 }
 
-.quest{
-    text-align: center;
-    font-weight: bold;
-    font-size: 30px;
-}
-
 li{
     text-align: center;
 }
@@ -101,4 +95,39 @@ body{
     position: sticky;
     top: 565px;
     right: 100px;
+}
+
+
+#quest{
+    position: relative;
+    background-image: url('img/Quest.list.backgrnd.png');
+    background-repeat: no-repeat;
+    background-size : contain;
+    background-position: center;
+    margin: auto;
+    width: 250px;
+    height: 400px;
+}
+
+.todo-text{
+    position: absolute;
+    left: 20px;
+    top: 80px;
+}
+
+#TIMER{
+    position: relative;
+    background-image: url('img/Quest.list.backgrnd.png');
+    background-repeat: no-repeat;
+    background-size : contain;
+    background-position: center;
+    margin: auto;
+    width: 250px;
+    height: 400px;
+}
+
+.timer-text{
+    position: absolute;
+    left: 20px;
+    top: 150px;
 }

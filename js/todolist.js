@@ -3,6 +3,8 @@ const todo = document.querySelector("#todo");
 const list = document.querySelector("list");
 const todoList = document.querySelector(".todo-list");
 let listArray = [];
+const todoNpc = document.getElementById('todoNpc');
+const quest = document.getElementById('quest');
 
 function handleTodo(event){
 
@@ -39,3 +41,4 @@ function handleDelete(event){
 }
 
 todoInput.addEventListener("submit", handleTodo);
+todoNpc.addEventListener('click', () => quest.classList.remove('hidden'));

@@ -1,4 +1,6 @@
 const remainingTime = document.getElementById('remainingTime');
+const timerNpc = document.getElementById('timerNpc');
+const timer = document.getElementById('TIMER');
 
 function timerStart() {
     const timerNodeList = document.getElementsByName('timer');
@@ -25,4 +27,6 @@ function timerStart() {
     }
 }) 
 }
+
+timerNpc.addEventListener('click', () => timer.classList.remove('hidden') );
 
