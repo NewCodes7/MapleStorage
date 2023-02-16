@@ -5,6 +5,7 @@ const todoList = document.querySelector(".todo-list");
 let listArray = [];
 const todoNpc = document.getElementById('todoNpc');
 const quest = document.getElementById('quest');
+const questHidden = document.getElementById('quest-hidden');
 
 function handleTodo(event){
 
@@ -41,4 +42,10 @@ function handleDelete(event){
 }
 
 todoInput.addEventListener("submit", handleTodo);
-todoNpc.addEventListener('click', () => quest.classList.remove('hidden'));
+todoNpc.addEventListener('click', popUpQuest);
+
+function popUpQuest(){
+    questHidden.classList.remove('hidden');
+    quest.style.backgroundImage = "url('img/Quest.list.backgrnd.png')";
+}
+ 

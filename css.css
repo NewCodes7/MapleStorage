@@ -19,7 +19,7 @@
     }
 
 #logo{
-    width: 22%;                   
+    width: 270px;                   
     display: block;
     margin: 0px auto;
 }
@@ -91,43 +91,73 @@ body{
     }
 }
 
-#taxi{
-    position: sticky;
-    top: 565px;
-    right: 100px;
+.scene1{
+    position: relative;
+}
+
+.option-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.scene2{
+    position: relative;
+    top: 150px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.npc-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    
 }
 
 
 #quest{
-    position: relative;
-    background-image: url('img/Quest.list.backgrnd.png');
+    width: 200px;
+    height: 250px;
     background-repeat: no-repeat;
+    position: relative;
     background-size : contain;
     background-position: center;
     margin: auto;
-    width: 250px;
-    height: 400px;
+    
 }
 
 .todo-text{
-    position: absolute;
+    position: relative;
     left: 20px;
     top: 80px;
 }
 
 #TIMER{
-    position: relative;
-    background-image: url('img/Quest.list.backgrnd.png');
+    width: 200px;
+    height: 250px;
     background-repeat: no-repeat;
+    position: relative;
     background-size : contain;
     background-position: center;
     margin: auto;
-    width: 250px;
-    height: 400px;
 }
 
 .timer-text{
-    position: absolute;
-    left: 20px;
-    top: 150px;
+    position: relative; 
+    /* position: absolute; 이걸로 하면 왜 글자가 뭉치지? */
+    top: 100px;
+    left: 55px;
+}
+
+#taxi{
+    width: auto;
+    height: auto;
+}
+
+#character{
+    width: auto;
+    height: auto;
 }

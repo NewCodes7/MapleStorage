@@ -16,6 +16,9 @@
         <img src="img/MapleStory_Logo.png" id="logo" class="waitingClick">
     </header>
 
+    <div id="background"></div>
+    <audio id="bgm" controls src="music/(구)로그인.mp3"></audio>
+
     <form class="logIn-form">
         <input
         id="input" 
@@ -26,47 +29,63 @@
         <button id="login">로그인</button>
     </form>
 
-    <div id="clock"></div>
+    <section class="scene1">
+        <div class="option-container">
+            <div id="quest">
+                <div id="quest-hidden" class="hidden">
+                <form class="todo-input todo-text">
+                <div id="greeting"></div>
+                <input
+                id="todo"
+                type="text"
+                required
+                placeholder="할 일을 입력해주세요!"/>
+            </form>
+            <div class="todo-list todo-text"></div>
+                </div>
+            </div>
 
-    <div id="quest" class="hidden">
-            <form class="todo-input todo-text">
-            <div id="greeting"></div>
-            <input
-            id="todo"
-            type="text"
-            required
-            placeholder="할 일을 입력해주세요!"/>
-        </form>
-        <div class="todo-list todo-text"></div>
-    </div id="">
+            <div id="taxiInfo" class="taxi_div"></div>
+
+            <div id="TIMER">
+        <div id="timer-hidden" class="hidden">
+            <input type="radio" id="900s" name="timer" value="3"  class="timer-text">
+            <label for="900s" class="timer-text">15분 경험치 쿠폰</label>
+            <br>
+            <input type="radio" id="1800s" name="timer" value="1800" class="timer-text">
+            <label for="1800s" class="timer-text">30분 경험치 쿠폰</label>
+            <br>
+            <input type="radio" id="3600s" name="timer" value="3600" class="timer-text">
+            <label for="3600s" class="timer-text">60분 경험치 쿠폰</label>
+            <br>
+            <button onclick="timerStart()" class="timer-text">Start!</button>
+            <div id="remainingTime" class="timer-text"></div>
+        </div>
+    </div id="TIMER">
     
-    <audio id="bgm" controls src="music/(구)로그인.mp3"></audio>
-    <img id="taxi" class="waitingClick" src="img/taxi.png">
-    <div id="background"></div>
     
-    <div id="TIMER" class="hidden">
-        <input type="radio" id="900s" name="timer" value="3"  class="timer-text">
-        <label for="900s" class="timer-text">15분 경험치 쿠폰</label>
-        <input type="radio" id="1800s" name="timer" value="1800" class="timer-text">
-        <label for="1800s" class="timer-text">30분 경험치 쿠폰</label>
-        <input type="radio" id="3600s" name="timer" value="3600" class="timer-text">
-        <label for="3600s" class="timer-text">60분 경험치 쿠폰</label>
-        <button onclick="timerStart()" class="timer-text">Start!</button>
-        <div id="remainingTime" class="timer-text"></div>
-    </div>
-
-    <img src="img/character.png" id="character">
-    <img src="img/todoNpc.gif" id="todoNpc">
-    <img src="img/timerNpc.gif" id="timerNpc">
-
-    <div id="taxiInfo" class="taxi_div"></div>
-
+            </div>
+        </div>
+    </section>
+    
+    <section class="scene2">
+        <div class="npc-container">
+            <img id="taxi" class="waitingClick" src="img/taxi.png">
+            <!-- <img src="img/character.png" id="character"> -->
+            <img src="img/todoNpc.gif" id="todoNpc" class="clickCursor">
+            <img src="img/timerNpc.gif" id="timerNpc" class="clickCursor">
+        </div class="npc-container">
+    </section>
+    
+    
     <div id="quote">
         <span id="sentence"></span>
         <span id="author"></span>
     </div>
 
-
+    <div id="clock"></div>
+    
+    
     <script src="js/greeting.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>

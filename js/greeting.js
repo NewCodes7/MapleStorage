@@ -8,6 +8,11 @@ function handleLogIn(event){
     localStorage.setItem('username', username);
     logInForm.classList.add('hidden');
     greeting.innerText = `${username}'s QUEST`;
+    bgm.play();
+    bgm.addEventListener('ended', function() { 
+        this.currentTime = 0;
+        this.play();
+    }, false);
 }
 
 if(savedUsername !== null){

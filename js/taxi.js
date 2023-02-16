@@ -57,4 +57,4 @@ waitingClick.forEach(element => {
 
 
 taxi.addEventListener('click', onTaxi);
-logo.addEventListener('click', goHome)
+logo.addEventListener('click', goHome);

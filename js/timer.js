@@ -1,6 +1,7 @@
 const remainingTime = document.getElementById('remainingTime');
 const timerNpc = document.getElementById('timerNpc');
 const timer = document.getElementById('TIMER');
+const timerHidden = document.getElementById('timer-hidden');
 
 function timerStart() {
     const timerNodeList = document.getElementsByName('timer');
@@ -28,5 +29,6 @@ function timerStart() {
 }) 
 }
 
-timerNpc.addEventListener('click', () => timer.classList.remove('hidden') );
+timerNpc.addEventListener('click', () => {timerHidden.classList.remove('hidden');
+timer.style.backgroundImage = "url('img/OptionMenu5.backgrnd.png')";});
 
