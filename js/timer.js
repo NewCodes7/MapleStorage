@@ -6,6 +6,7 @@ const progressArea = document.getElementById('progress-area');
 const remainingTime = document.getElementById('remainingTime');
 const timerOption = document.getElementById('timer-option');
 const timerCancelBtn = document.getElementById('timerCancelBtn');
+const timerStartBtn = document.getElementById('timerStartBtn');
 let ticTac;
 let reset;
 
@@ -54,6 +55,10 @@ function popUpTimer(){
 }
 
 timerNpc.addEventListener('click', popUpTimer);
+timerStartBtn.addEventListener('mouseover', () => timerStartBtn.style.backgroundImage = "url('img/SysOpt.BtOK.mouseOver.0.png')" );
+timerStartBtn.addEventListener('mouseleave', () => timerStartBtn.style.backgroundImage = "url('img/SysOpt.BtOK.normal.0.png')" );
+timerCancelBtn.addEventListener('mouseover', () => timerCancelBtn.style.backgroundImage = "url('img/SysOpt.BtCancle.mouseOver.0.png')" );
+timerCancelBtn.addEventListener('mouseleave', () => timerCancelBtn.style.backgroundImage = "url('img/SysOpt.BtCancle.pressed.0.png')" );
 timer.style.display = 'none';
 
 

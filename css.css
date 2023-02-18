@@ -132,7 +132,7 @@ body{
     position: relative;
     left: 70px;
     top: 22px;
-}
+}    
 
 .todo-list{
     position: relative;
@@ -155,6 +155,29 @@ body{
     /* position: absolute; 이걸로 하면 왜 글자가 뭉치지? */
     top: 30px;
     left: 55px;
+    
+}
+
+#timerStartBtn{
+    background-image: url('img/SysOpt.BtOK.normal.0.png');
+    background-color: transparent; /* make the button transparent */
+    background-repeat: no-repeat;  /* make the background image appear only once */
+    background-position: 0px 0px;  /* equivalent to 'top left' */
+    border: none;           /* assuming we don't want any borders */
+    height: 16px;           /* make this the size of your image */
+    width: 40px;
+}
+
+#timerCancelBtn{
+    background-image: url('img/SysOpt.BtCancle.normal.0.png');
+    background-color: transparent; /* make the button transparent */
+    background-repeat: no-repeat;  /* make the background image appear only once */
+    background-position: 0px 0px;  /* equivalent to 'top left' */
+    border: none;           /* assuming we don't want any borders */
+    height: 16px;           /* make this the size of your image */
+    width: 40px;
+    position: absolute;
+    top: 100px;
 }
 
 #taxi{
@@ -204,10 +227,6 @@ body{
 	left: 43%;
 }
 
-#timerCancelBtn{
-    position: absolute;
-    top: 100px;
-}
 
 .on600s{
     background:#3232FF;

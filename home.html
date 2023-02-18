@@ -56,29 +56,29 @@
             <label for="100s" class="timer-text">100초 아이템 수확</label>
             <br> -->
             <div id="timer-option">
-                <input type="radio" id="600s" name="timer" value="600"  class="timer-text">
+                <input type="radio" id="600s" name="timer" value="600"  class="timer-text clickCursor">
                 <label for="600s" class="timer-text">10분 경험치 쿠폰</label>
                 <br>
-                <input type="radio" id="900s" name="timer" value="900"  class="timer-text">
+                <input type="radio" id="900s" name="timer" value="900"  class="timer-text clickCursor">
                 <label for="900s" class="timer-text">15분 경험치 쿠폰</label>
                 <br>
-                <input type="radio" id="1200s" name="timer" value="1200"  class="timer-text">
+                <input type="radio" id="1200s" name="timer" value="1200"  class="timer-text clickCursor">
                 <label for="1200s" class="timer-text">20분 경험치 쿠폰</label>
                 <br>
-                <input type="radio" id="1800s" name="timer" value="1800" class="timer-text">
+                <input type="radio" id="1800s" name="timer" value="1800" class="timer-text clickCursor">
                 <label for="1800s" class="timer-text">30분 경험치 쿠폰</label>
                 <br>
-                <input type="radio" id="3600s" name="timer" value="3600" class="timer-text">
+                <input type="radio" id="3600s" name="timer" value="3600" class="timer-text clickCursor">
                 <label for="3600s" class="timer-text">60분 경험치 쿠폰</label>
                 <br>
                 
-                <button onclick="timerStart()" class="timer-text">Start</button>
+                <button onclick="timerStart()" id="timerStartBtn" class="timer-text clickCursor"></button>
             </div>
 
             <div id="progress-area">
                 <div id="remainingTime"></div>
                 <div id="progressBar"></div>
-                <button onclick="timerCancel()" id="timerCancelBtn">Cancel</button>
+                <button onclick="timerCancel()" id="timerCancelBtn" class="clickCursor"></button>
             </div>
             
         </div>
