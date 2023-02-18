@@ -28,6 +28,16 @@ function timerStart() {
 }) 
 }
 
-timerNpc.addEventListener('click', () => {timerHidden.classList.remove('hidden');
-timer.style.backgroundImage = "url('img/OptionMenu5.backgrnd.png')";});
+function popUpTimer(){
+    timer.style.backgroundImage = "url('img/OptionMenu5.backgrnd.png')";
+    if(timer.style.display == 'block'){
+        timer.style.display = 'none';
+    } else{
+        timer.style.display = 'block';
+    }
+}
+
+timerNpc.addEventListener('click', popUpTimer);
+timer.style.display = 'none';
+
 

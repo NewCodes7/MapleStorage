@@ -6,6 +6,13 @@ const waitingClick = document.querySelectorAll('.waitingClick');
 const logo = document.getElementById('logo');
 
 function onTaxi(){
+    if(taxiInfo.style.display == 'block'){
+        taxiInfo.style.display = 'none';
+        taxiInfo.textContent = '';
+    } else{
+        taxiInfo.style.display = 'block';
+        taxiInfo.textContent = '';
+    }
     taxiInfo.style.backgroundImage = "url('img/SysOpt.backgrnd.png')";
     selectTown('헤네시스');
     selectTown('페리온');

@@ -44,7 +44,13 @@ todoInput.addEventListener("submit", handleTodo);
 todoNpc.addEventListener('click', popUpQuest);
 
 function popUpQuest(){
-    questHidden.classList.remove('hidden');
+    if(quest.style.display == 'block'){
+        quest.style.display = 'none';
+        todoList.textContent = '';
+    } else{
+        quest.style.display = 'block';
+        todoList.textContent = '';
+    }
     quest.style.backgroundImage = "url('img/Quest.list.backgrnd.png')";
     listArray = JSON.parse(localStorage.getItem('newtodo'));
     let i = 0;
@@ -60,4 +66,5 @@ function popUpQuest(){
         i++;
     }
 }
+quest.style.display = 'none';
 
