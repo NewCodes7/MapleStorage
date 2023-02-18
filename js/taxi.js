@@ -39,7 +39,7 @@ function moveTown(event){
     //백틱기호 안되는거 당연!! css에 맞게 줘야지.. 이거는 es6만의 문법이니 그런데 src는 됐잖아? 빠같에 싸져있어서 그랬나 이거는 안에 싸져있으니
     bgm.src = `music/${event.target.id}.mp3`;
     taxiInfo.innerHTML = '';
-    taxiInfo.style.backgroundImage = "url('')";
+    taxiInfo.style.display = 'none';
     bgm.play();
     bgm.addEventListener('ended', function() { 
         this.currentTime = 0;

@@ -1,7 +1,9 @@
-const remainingTime = document.getElementById('remainingTime');
 const timerNpc = document.getElementById('timerNpc');
 const timer = document.getElementById('TIMER');
 const timerHidden = document.getElementById('timer-hidden');
+const progressBar = document.getElementById('progressBar');
+const progressArea = document.getElementsByClassName('progress-area');
+const remainingTime = document.getElementById('remainingTime');
 
 function timerStart() {
     const timerNodeList = document.getElementsByName('timer');
@@ -19,11 +21,15 @@ function timerStart() {
             let seconds = ('0' + Math.floor(remainingSeconds%60)).slice(-2);
             remainingTime.innerText = `${minutes}:${seconds}`;
         }
+        progressBar.classList.add(`on${timerSet}s`);
+
         function clear(){
             clearInterval(ticTac);
             clearInterval(reset);
             remainingTime.innerText = '수고하셨습니다!';
         }
+
+        
     }
 }) 
 }
