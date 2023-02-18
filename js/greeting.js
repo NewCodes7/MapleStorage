@@ -7,7 +7,7 @@ function handleLogIn(event){
     const username = document.getElementById('input').value;
     localStorage.setItem('username', username);
     logInForm.classList.add('hidden');
-    greeting.innerText = `${username}'s QUEST`;
+    greeting.innerText = `${username}'s Quest`;
     bgm.play();
     bgm.addEventListener('ended', function() { 
         this.currentTime = 0;
@@ -17,7 +17,7 @@ function handleLogIn(event){
 
 if(savedUsername !== null){
     logInForm.classList.add('hidden');
-    greeting.innerText = `${savedUsername}'s QUEST`;
+    greeting.innerText = `${savedUsername}'s Quest`;
 } 
 
 logInForm.addEventListener("submit", handleLogIn);

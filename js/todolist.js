@@ -46,5 +46,18 @@ todoNpc.addEventListener('click', popUpQuest);
 function popUpQuest(){
     questHidden.classList.remove('hidden');
     quest.style.backgroundImage = "url('img/Quest.list.backgrnd.png')";
+    listArray = JSON.parse(localStorage.getItem('newtodo'));
+    let i = 0;
+    while(i<listArray.length){
+        const li = document.createElement('li');
+        li.id = listArray[i].id;
+        li.innerText = listArray[i].text;
+        todoList.appendChild(li);
+        const button = document.createElement('button');
+        li.appendChild(button);
+        button.innerText = 'X';
+        button.addEventListener("click", handleDelete);
+        i++;
+    }
 }
 

@@ -103,7 +103,7 @@ body{
 }
 
 .scene2{
-    position: relative;
+    position: sticky;
     top: 150px;
     max-width: 900px;
     margin: 0 auto;
@@ -114,7 +114,6 @@ body{
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    margin-top: 270px;
 }
 
 
@@ -166,4 +165,10 @@ body{
 #character{
     width: auto;
     height: auto;
+}
+
+
+body{
+    font-family: 'Gowun Dodum', sans-serif;
+    color: white;
 }
