@@ -173,7 +173,8 @@ body{
     color: white;
 }
 
-.progress-area{
+#progress-area{
+    display: none;
     position: relative;
     width:270px;
     height:25px;
@@ -201,7 +202,11 @@ body{
     text-align: center;
     top: 7%;
 	left: 43%;
-    
+}
+
+#timerCancelBtn{
+    position: absolute;
+    top: 100px;
 }
 
 .on600s{
