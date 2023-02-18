@@ -31,6 +31,7 @@
 
     <section class="scene1">
         <div class="option-container">
+            <div id="taxiInfo" class="taxi_div"></div>
             <div id="quest">
                 <div id="quest-hidden" class="hidden">
                 <form class="todo-input todo-text">
@@ -41,16 +42,23 @@
                 required
                 placeholder="할 일을 입력해주세요!"/>
             </form>
-            <div class="todo-list todo-text"></div>
+            <div class="todo-list"></div>
                 </div>
             </div>
 
-            <div id="taxiInfo" class="taxi_div"></div>
-
             <div id="TIMER">
         <div id="timer-hidden" class="hidden">
+            <!-- <input type="radio" id="100s" name="timer" value="100"  class="timer-text">
+            <label for="100s" class="timer-text">100초 아이템 수확</label>
+            <br> -->
+            <input type="radio" id="600s" name="timer" value="600"  class="timer-text">
+            <label for="600s" class="timer-text">10분 경험치 쿠폰</label>
+            <br>
             <input type="radio" id="900s" name="timer" value="3"  class="timer-text">
             <label for="900s" class="timer-text">15분 경험치 쿠폰</label>
+            <br>
+            <input type="radio" id="1200s" name="timer" value="1200"  class="timer-text">
+            <label for="1200s" class="timer-text">20분 경험치 쿠폰</label>
             <br>
             <input type="radio" id="1800s" name="timer" value="1800" class="timer-text">
             <label for="1800s" class="timer-text">30분 경험치 쿠폰</label>

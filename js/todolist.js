@@ -33,11 +33,10 @@ function handleTodo(event){
 }
 
 function handleDelete(event){
-    const currentTodo = localStorage.getItem('newtodo');
-    const objCurrentTodo = JSON.parse(currentTodo);
     const Xparent = event.target.parentElement;
     Xparent.remove();
-    const resultTodo = objCurrentTodo.filter((obj)=> obj.id !== parseInt(Xparent.id));
+    const resultTodo = listArray.filter((obj)=> obj.id !== parseInt(Xparent.id));
+    listArray = resultTodo;
     localStorage.setItem('newtodo', JSON.stringify(resultTodo));
 }
 
@@ -48,4 +47,4 @@ function popUpQuest(){
     questHidden.classList.remove('hidden');
     quest.style.backgroundImage = "url('img/Quest.list.backgrnd.png')";
 }
- 
+

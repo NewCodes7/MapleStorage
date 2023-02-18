@@ -5,7 +5,6 @@ const timerHidden = document.getElementById('timer-hidden');
 
 function timerStart() {
     const timerNodeList = document.getElementsByName('timer');
-    console.log(timerNodeList);
     timerNodeList.forEach((node) => {
       if(node.checked)  {
         const timerSet = Number(node.value);
