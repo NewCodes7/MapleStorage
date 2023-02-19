@@ -10,6 +10,7 @@ const timerStartBtn = document.getElementById('timerStartBtn');
 let ticTac;
 let reset;
 
+
 function timerStart() {
     const timerNodeList = document.getElementsByName('timer');
     timerNodeList.forEach((node) => {
@@ -17,8 +18,10 @@ function timerStart() {
         const timerSet = Number(node.value);
         let count = -1;
         counting(); // start 눌렀을 때 바로 타이머 보이도록
+        progressBar.classList.add(`on${timerSet}s`);
+        const soundEffect = new Audio(`soundEffect/sound${timerSet}.mp3`);
         ticTac = setInterval(counting, 1000);
-        reset = setInterval(() => count=-1, timerSet*999); //왜 화살표 함수로?, 1000으로 했을 때 첫 주기에서 1초 더 홀딩함(4초 기다리고 바뀜)
+        reset = setInterval(() => {count=-1; soundEffect.play(); }, timerSet*999); //왜 화살표 함수로?, 1000으로 했을 때 첫 주기에서 1초 더 홀딩함(4초 기다리고 바뀜)
         setInterval(clear, 2 * 60 * 60 * 1000);
         function counting(){
             let remainingSeconds = timerSet - (++count); 
@@ -26,7 +29,6 @@ function timerStart() {
             let seconds = ('0' + Math.floor(remainingSeconds%60)).slice(-2);
             remainingTime.innerText = `${minutes}:${seconds}`;
         }
-        progressBar.classList.add(`on${timerSet}s`);
         timerOption.style.display = 'none';
         progressArea.style.display = 'block';
     }
@@ -34,6 +36,8 @@ function timerStart() {
 }
 
 function clear(){
+    const soundFinish = new Audio('soundEffect/sound7200.mp3')
+    soundFinish.play();
     clearInterval(ticTac);
     clearInterval(reset);
     remainingTime.innerText = '';

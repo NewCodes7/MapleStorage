@@ -232,26 +232,31 @@ body{
     background:#3232FF;
     animation:progressBar 600s linear;
     animation-fill-mode:forwards;
+    animation-iteration-count: 12;
   }
-  .on900s{
+  .on3s{
     background:#3232FF;
-    animation:progressBar 10s linear;
+    animation:progressBar 3s linear;
     animation-fill-mode:forwards;
+    animation-iteration-count: 8;
   }
   .on1200s{
     background:#3232FF;
     animation:progressBar 1200s linear;
     animation-fill-mode:forwards;
+    animation-iteration-count: 6;
   }
   .on1800s{
     background:#3232FF;
     animation:progressBar 1800s linear;
     animation-fill-mode:forwards;
+    animation-iteration-count: 4;
   }
   .on3600s{
     background:#3232FF;
     animation:progressBar 3600s linear;
     animation-fill-mode:forwards;
+    animation-iteration-count: 2;
   }
 
   @keyframes progressBar{
