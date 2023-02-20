@@ -4,14 +4,15 @@ const background = document.getElementById('background');
 const taxiInfo = document.getElementById('taxiInfo');
 const waitingClick = document.querySelectorAll('.waitingClick');
 const logo = document.getElementById('logo');
+const townIconWrapper = document.getElementById('townIcon-Wrapper');
 
 function onTaxi(){
     if(taxiInfo.style.display == 'block'){
         taxiInfo.style.display = 'none';
-        taxiInfo.textContent = '';
+        townIconWrapper.textContent = '';
     } else{
         taxiInfo.style.display = 'block';
-        taxiInfo.textContent = '';
+        townIconWrapper.textContent = '';
     }
     taxiInfo.style.backgroundImage = "url('img/SysOpt.backgrnd.png')";
     selectTown('헤네시스');
@@ -24,9 +25,9 @@ function onTaxi(){
 function selectTown(townName){
     const town = document.createElement('img');
     town.id = townName;
-    town.className = 'townIcon waitingClick';
+    town.className = 'waitingClick';
     town.src = `img/${town.id}주문서.png`
-    taxiInfo.append(town);
+    townIconWrapper.append(town);
     town.addEventListener('click', moveTown); //스코프 덕분에 이렇게 간결하게 쓸 수 있는건가?
     town.addEventListener('mouseenter', event => event.target.classList.add('clickCursor'));
     town.addEventListener('mouseleave', event => event.target.classList.remove('clickCursor'));  //맨 아래 코드랑 중복되는 느낌인데 해결할 수 았나?

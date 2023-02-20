@@ -64,8 +64,8 @@ body{
 }
 
 .taxi_div{
-    width: 200px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     background-repeat: no-repeat;
     position: relative;
     background-size : contain;
@@ -73,10 +73,11 @@ body{
     margin: auto;
 }
 
-.townIcon{
+#townIcon-Wrapper{
     position: relative;
-    left: 19px;
-    top: 100px;
+    width: 160px;
+    margin: auto;
+    top: 40%;
 }
 
 .clickCursor{
@@ -96,7 +97,7 @@ body{
     width:100%;
     height:100%;
     left: 0px;
-    top: 0px;
+    top: 30px;
     right:0px;
     bottom:0px;
 }
@@ -137,7 +138,7 @@ npc조절하는거 결국 상위div를 백그라운드처럼 전체 영역으러
 
 #quest{
     width: 300px;
-    height: 250px;
+    height: 300px;
     background-repeat: no-repeat;
     position: relative;
     background-size : contain;
@@ -162,8 +163,8 @@ npc조절하는거 결국 상위div를 백그라운드처럼 전체 영역으러
 }
 
 #TIMER{
-    width: 400px;
-    height: 250px;
+    width: 500px;
+    height: 300px;
     background-repeat: no-repeat;
     position: relative;
     background-size : contain;
@@ -171,13 +172,6 @@ npc조절하는거 결국 상위div를 백그라운드처럼 전체 영역으러
     margin: auto;
 }
 
-.timer-text{
-    position: relative; 
-    /* position: absolute; 이걸로 하면 왜 글자가 뭉치지? */
-    top: 30px;
-    left: 55px;
-    
-}
 
 #timerStartBtn{
     background-image: url('img/SysOpt.BtOK.normal.0.png');
@@ -202,7 +196,10 @@ npc조절하는거 결국 상위div를 백그라운드처럼 전체 영역으러
 
 #timer-option{
     position: relative;
+    width: 150px;
+    margin: auto;
     height: 250px;
+    top: 20%;
 }
 
 .btn-wrapper{
@@ -318,4 +315,3 @@ body{
     text-decoration-thickness: 0.7px;
   }
 
-  
