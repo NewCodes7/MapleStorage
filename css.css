@@ -154,8 +154,11 @@ npc조절하는거 결국 상위div를 백그라운드처럼 전체 영역으러
 
 .todo-list{
     position: relative;
-    right: 20px;
-    top: 33px;
+    width: 50%;
+    margin: auto;
+    top: 23px;
+    height: 177px;
+    overflow: scroll;
 }
 
 #TIMER{

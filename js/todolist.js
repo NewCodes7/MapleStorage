@@ -63,6 +63,7 @@ function popUpQuest(){
         li.appendChild(button);
         button.innerText = 'X';
         button.addEventListener("click", handleDelete);
+        li.style.textAlign = 'left';
         i++;
     }
 }
