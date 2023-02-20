@@ -71,16 +71,20 @@
                 <input type="radio" id="3600s" name="timer" value="3600" class="timer-text clickCursor">
                 <label for="3600s" class="timer-text">60분 경험치 쿠폰</label>
                 <br>
-                
+            </div>
+            
                 <div class="btn-wrapper">
-                    <button onclick="timerStart()" id="timerStartBtn" class="timer-text clickCursor"></button>
+                    <button onclick="timerStart()" id="timerStartBtn" class="clickCursor"></button>
                     <button onclick="timerCancel()" id="timerCancelBtn" class="clickCursor"></button>
                 </div>
-            </div>
+                
 
-            <div id="progress-area">
-                <div id="remainingTime"></div>
-                <div id="progressBar"></div>
+            <div id="tictac-area">
+                <div id="totalTime"></div>
+                <div id="progress-area">
+                    <div id="remainingTime"></div>
+                    <div id="progressBar"></div>
+                </div>
             </div>
             
         </div>
