@@ -35,7 +35,7 @@
 
     <section class="scene1">
         <div class="option-container">
-            <div id="taxiInfo" class="taxi_div"></div>
+            <div id="taxiInfo" class="taxi_div" style="display:none;"></div>
             <div id="quest">
                 
                 <form class="todo-input todo-text">
@@ -72,13 +72,15 @@
                 <label for="3600s" class="timer-text">60분 경험치 쿠폰</label>
                 <br>
                 
-                <button onclick="timerStart()" id="timerStartBtn" class="timer-text clickCursor"></button>
+                <div class="btn-wrapper">
+                    <button onclick="timerStart()" id="timerStartBtn" class="timer-text clickCursor"></button>
+                    <button onclick="timerCancel()" id="timerCancelBtn" class="clickCursor"></button>
+                </div>
             </div>
 
             <div id="progress-area">
                 <div id="remainingTime"></div>
                 <div id="progressBar"></div>
-                <button onclick="timerCancel()" id="timerCancelBtn" class="clickCursor"></button>
             </div>
             
         </div>
@@ -90,26 +92,21 @@
     </section>
     
     <section class="scene2">
-        <div class="npc-container">
-            <img id="taxi" class="waitingClick" src="img/taxi.png">
-            <!-- <img src="img/character.png" id="character"> -->
-            <img src="img/todoNpc.gif" id="todoNpc" class="clickCursor">
-            <img src="img/timerNpc.gif" id="timerNpc" class="clickCursor">
-        </div class="npc-container">
+        <div class="npc-absolute">
+            <div class="npc-container">
+                <img id="taxi" class="waitingClick" src="img/taxi.png">
+                <!-- <img src="img/character.png" id="character"> -->
+                <img src="img/todoNpc.gif" id="todoNpc" class="clickCursor">
+                <img src="img/timerNpc.gif" id="timerNpc" class="clickCursor">
+            </div class="npc-container">
+        </div>
     </section>
-    
-    
-    <div id="quote">
-        <span id="sentence"></span>
-        <span id="author"></span>
-    </div>
 
     <div id="clock"></div>
     
     
     <script src="js/greeting.js"></script>
     <script src="js/clock.js"></script>
-    <script src="js/quotes.js"></script>
     <script src="js/todolist.js"></script>
     <script src="js/taxi.js"></script>
     <script src="js/timer.js"></script>
