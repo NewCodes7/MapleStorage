@@ -310,3 +310,12 @@ body{
   #todoNpc{
     transform: scaleX(-1);
   }
+
+  .strikeThrough {
+    color: #999;
+    text-decoration: line-through;
+    text-decoration-color: #999;
+    text-decoration-thickness: 0.7px;
+  }
+
+  

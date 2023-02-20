@@ -8,9 +8,8 @@ const quest = document.getElementById('quest');
 const questHidden = document.getElementById('quest-hidden');
 
 function handleTodo(event){
-
-    //배열 형태로 저장
     event.preventDefault();
+    //배열 형태로 저장
     const newTodo = {
         text: todo.value,
         id: Date.now(),
@@ -18,22 +17,50 @@ function handleTodo(event){
     listArray.push(newTodo);
     localStorage.setItem('newtodo', JSON.stringify(listArray));
     todo.value = '';
-
+    
     //li 화면에 보이도록 구현
     const li = document.createElement('li');
+    const label = document.createElement('label');
+    const input = document.createElement('input');
+    const span = document.createElement('span');
     li.id = newTodo.id;
+    span.innerText = newTodo.text;
+    li.style.listStyle = 'none';
     todoList.appendChild(li);
-    li.innerText = newTodo.text;
+    li.appendChild(label);
+    label.appendChild(input);
+    label.appendChild(span);
+    input.type = 'checkbox';
     const button = document.createElement('button');
-    li.appendChild(button);
-    button.innerText = 'X';
+    label.appendChild(button);
+    button.innerText = '🗑';
+    button.style.border = 'none'
+    button.style.backgroundColor = 'transparent'
+    button.classList.add('clickCursor');
+    input.classList.add('clickCursor');
+    li.style.textAlign = 'left';
+    li.style.marginTop = '2px';
 
-    //삭제하기
+    
+    //삭제하기, checked
     button.addEventListener("click", handleDelete);
+    input.addEventListener('click', handleComplete);
+    }
+
+
+
+function handleComplete(event){
+    const isChecked = event.target.checked;
+    const liText = event.target.nextSibling;
+    if(isChecked){
+        liText.classList.add('strikeThrough');
+    } else {
+        liText.classList.remove('strikeThrough');
+    }
 }
 
 function handleDelete(event){
-    const Xparent = event.target.parentElement;
+    const Xparent = event.target.parentElement.parentNode;
     Xparent.remove();
     const resultTodo = listArray.filter((obj)=> obj.id !== parseInt(Xparent.id));
     listArray = resultTodo;
@@ -52,20 +79,39 @@ function popUpQuest(){
         todoList.textContent = '';
     }
     quest.style.backgroundImage = "url('img/Quest.list.backgrnd.png')";
-    listArray = JSON.parse(localStorage.getItem('newtodo'));
-    let i = 0;
-    while(i<listArray.length){
+
+    if(listArray.length != 0){    
+        let i = 0;
+        listArray = JSON.parse(localStorage.getItem('newtodo'));
+        while(i<listArray.length){
+            // 중복 어떻게 제걸할 것인가?
         const li = document.createElement('li');
+        const label = document.createElement('label');
+        const input = document.createElement('input');
+        const span = document.createElement('span');
         li.id = listArray[i].id;
-        li.innerText = listArray[i].text;
+        span.innerText = listArray[i].text;
+        li.style.listStyle = 'none';
         todoList.appendChild(li);
+        li.appendChild(label);
+        label.appendChild(input);
+        label.appendChild(span);
+        input.type = 'checkbox';
         const button = document.createElement('button');
-        li.appendChild(button);
-        button.innerText = 'X';
-        button.addEventListener("click", handleDelete);
+        label.appendChild(button);
+        button.innerText = '🗑';
+        button.style.border = 'none'
+        button.style.backgroundColor = 'transparent'
+        button.classList.add('clickCursor');
+        input.classList.add('clickCursor');
         li.style.textAlign = 'left';
-        i++;
+        li.style.marginTop = '2px';
+    
+        button.addEventListener("click", handleDelete);
+        input.addEventListener('click', handleComplete);
+        i++;}
     }
 }
 quest.style.display = 'none';
+
 
