@@ -199,16 +199,17 @@ npc조절하는거 결국 상위div를 백그라운드처럼 전체 영역으러
     width: 150px;
     margin: auto;
     height: 250px;
-    top: 20%;
+    top: 15%;
+    line-height:2;
 }
 
 .btn-wrapper{
     position: absolute;
     width: 100%;
-    bottom: 10%;
+    bottom: 12%;
     display: flex;
     justify-content: center;
-    z-index: 2;
+    z-index: 1.8;
 }
 
 #tictac-area{
@@ -249,7 +250,19 @@ body{
     top: 8px;
 }
 
-#progressBar{
+#progress-area2{
+    position: relative;
+    width:270px;
+    height:25px;
+    background: #6478FF;
+    border:3px solid #3232FF;
+    margin: auto;
+    text-align: center;
+    border-radius: 7px;
+    margin-top: 20px;
+}
+
+#progressBar, #progressBar2{
     position: absolute;
     width:100%;
     height:100%;
@@ -264,6 +277,18 @@ body{
     top: 7%;
 }
 
+#remainingTime2{
+    position: relative;
+    z-index: 2;
+    top: 7%;
+}
+
+.on100s{
+    background:#3232FF;
+    animation:progressBar 100s linear;
+    animation-fill-mode:forwards;
+    animation-iteration-count: 12;
+  }
 
 .on600s{
     background:#3232FF;
