@@ -4,6 +4,7 @@ const timerHidden = document.getElementById('timer-hidden');
 const progressBar = document.getElementById('progressBar');
 const progressBar2 = document.getElementById('progressBar2');
 const progressArea = document.getElementById('progress-area');
+const progressArea2 = document.getElementById('progress-area2');
 const remainingTime = document.getElementById('remainingTime');
 const remainingTime2 = document.getElementById('remainingTime2');
 const timerOption = document.getElementById('timer-option');
@@ -16,15 +17,19 @@ let ticTac;
 let ticTac2;
 let reset;
 let reset2;
+let resetTotalCount;
 
 
 function timerStart() {
+//경쿠 카운트
     const timerNodeList = document.getElementsByName('timer');
     timerNodeList.forEach((node) => {
       if(node.checked)  {
+        progressArea.style.display = 'block';
+
         const timerSet = Number(node.value);
         let count = -1;
-        let totalCount = -1;
+        
         counting(); // start 눌렀을 때 바로 타이머 보이도록
         progressBar.classList.add(`on${timerSet}s`);
         const soundEffect = new Audio(`soundEffect/sound${timerSet}.mp3`);
@@ -33,24 +38,38 @@ function timerStart() {
         setTimeout(clear, 2 * 60 * 60 * 1000); 
         function counting(){
             let remainingTotalSeconds = timerSet - (++count);
-            totalCount += 1;
+            
             let remainingMinutes = ('0' + Math.floor(remainingTotalSeconds/60)).slice(-2);
             let remainingSeconds = ('0' + Math.floor(remainingTotalSeconds%60)).slice(-2);
-            let countUpMinutes = ('0' + Math.floor(totalCount/60)).slice(-2);
-            let countUpSeconds = ('0' + Math.floor(totalCount%60)).slice(-2);
+            
             remainingTime.innerText = `경쿠 남은시간: ${remainingMinutes}:${remainingSeconds}`;
-            totalTime.innerText = `총 사냥시간: ${countUpMinutes}:${countUpSeconds}`
+            
         }
         timerOption.style.display = 'none';
         tictacArea.style.display = 'block';
     }
 }) 
+if(remainingTime.innerText == ''){
+    progressArea.style.display = 'none';
 }
 
-function timerStart2(){
+//총 사냥시간 카운트
+let totalCount = -1;
+resetTotalCount = setInterval(totalCounting, 1000);
+totalCounting();
+function totalCounting(){
+    totalCount += 1;
+    let countUpMinutes = ('0' + Math.floor(totalCount/60)).slice(-2);
+    let countUpSeconds = ('0' + Math.floor(totalCount%60)).slice(-2);
+    totalTime.innerText = `총 사냥시간: ${countUpMinutes}:${countUpSeconds}`
+}
+
+
+//메소줍기 카운트
     const timerGetItemNodeList = document.getElementsByName('get-item');
     timerGetItemNodeList.forEach((node) => {
         if(node.checked){
+            progressArea2.style.display = 'block';
             let remainingTotalSeconds2 = 101;
             progressBar2.classList.add(`on100s`);
             const soundEffect2 = new Audio(`soundEffect/sound3.mp3`);
@@ -64,12 +83,15 @@ function timerStart2(){
                 console.log(remainingTotalSeconds2);
                 remainingTime2.innerText = `줍기 남은시간: ${remainingMinutes2}:${remainingSeconds2}`;
                 }
+            } else {
+                progressArea2.style.display = 'none';
             }
         }
         )
         timerOption.style.display = 'none';
         tictacArea.style.display = 'block';
-}
+    }
+
     
 
 function cancel(){
@@ -77,10 +99,12 @@ function cancel(){
     clearInterval(ticTac2);
     clearInterval(reset);
     clearInterval(reset2);
+    clearInterval(resetTotalCount);
     progressBar.className = '';
     remainingTime.innerText = '';
     progressBar2.className = '';
     remainingTime2.innerText = '';
+    totalTime.innerText = '';
 }
 
     
