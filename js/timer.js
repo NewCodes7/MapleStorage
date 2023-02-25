@@ -19,8 +19,17 @@ let reset;
 let reset2;
 let resetTotalCount;
 
+let result_startTime;
+let result_stopTime;
+let result_totalCount;
+let result_expCoupon;
+let result_item;
+
 
 function timerStart() {
+    setTimeout(clear, 2000); //2 * 60 * 60 * 1000
+    result_startTime = clock.innerText;
+    console.log(result_startTime);
 //경쿠 카운트
     const timerNodeList = document.getElementsByName('timer');
     timerNodeList.forEach((node) => {
@@ -35,7 +44,7 @@ function timerStart() {
         const soundEffect = new Audio(`soundEffect/sound${timerSet}.mp3`);
         ticTac = setInterval(counting, 1000);
         reset = setInterval(() => {count=-1; soundEffect.play(); }, timerSet*999); //왜 화살표 함수로?, 1000으로 했을 때 첫 주기에서 1초 더 홀딩함(4초 기다리고 바뀜)
-        setTimeout(clear, 2 * 60 * 60 * 1000); 
+        
         function counting(){
             let remainingTotalSeconds = timerSet - (++count);
             
@@ -72,7 +81,7 @@ function totalCounting(){
             progressArea2.style.display = 'block';
             let remainingTotalSeconds2 = 101;
             progressBar2.classList.add(`on100s`);
-            const soundEffect2 = new Audio(`soundEffect/sound3.mp3`);
+            const soundEffect2 = new Audio(`soundEffect/sound100.mp3`);
             ticTac2 = setInterval(counting2, 1000);
             counting2();
             reset2 = setInterval(() => {remainingTotalSeconds2=101; soundEffect2.play();}, 100*999);
@@ -80,7 +89,6 @@ function totalCounting(){
                 --remainingTotalSeconds2;
                 let remainingMinutes2 = ('0' + Math.floor(remainingTotalSeconds2/60)).slice(-2);
                 let remainingSeconds2 = ('0' + Math.floor(remainingTotalSeconds2%60)).slice(-2);
-                console.log(remainingTotalSeconds2);
                 remainingTime2.innerText = `줍기 남은시간: ${remainingMinutes2}:${remainingSeconds2}`;
                 }
             } else {
@@ -114,7 +122,7 @@ function clear(){
     cancel();
     tictacArea.style.display = 'none';
     resultArea.style.display = 'block';
-
+    timerResult();
 }
 
 function timerCancel(){
@@ -133,6 +141,11 @@ function popUpTimer(){
         resultArea.style.display = 'none';
     }
 }
+
+function timerResult(){
+    resultArea.innerText = `사냥 시작시각: ${result_startTime}`
+}
+
 
 timerNpc.addEventListener('click', popUpTimer);
 timerStartBtn.addEventListener('mouseover', () => timerStartBtn.style.backgroundImage = "url('img/SysOpt.BtOK.mouseOver.0.png')" );
