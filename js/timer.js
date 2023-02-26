@@ -19,16 +19,18 @@ let reset;
 let reset2;
 let resetTotalCount;
 
-let result_startTime;
-let result_stopTime;
-let result_totalCount;
-let result_expCoupon;
-let result_item;
+const result_startTime = document.getElementById('result-starttime');
+const result_stopTime = document.getElementById('result-stoptime');
+const result_totalCount = document.getElementById('result-totalcount');
+const result_expCoupon = document.getElementById('result-expcoupon');
+const result_item = document.getElementById('result-item');
+
+let memoryStart;
 
 
 function timerStart() {
     setTimeout(clear, 2000); //2 * 60 * 60 * 1000
-    result_startTime = clock.innerText;
+    memoryStart = clock.innerText;
     console.log(result_startTime);
 //경쿠 카운트
     const timerNodeList = document.getElementsByName('timer');
@@ -143,7 +145,11 @@ function popUpTimer(){
 }
 
 function timerResult(){
-    resultArea.innerText = `사냥 시작시각: ${result_startTime}` //div로 감싸두는 게 좋을 듯 유지보수에 
+    result_startTime.innerText = `사냥 시작시각: ${memoryStart}` 
+    result_stopTime.innerText = `사냥 시작시각: ${memoryStart}` //변수저장
+    result_totalCount.innerText = `사냥 시작시각: ${memoryStart}` //변수저장
+    result_expCoupon.innerText = `사냥 시작시각: ${memoryStart}` //변수저장 + setinterval에 끼워두기
+    result_item.innerText = `사냥 시작시각: ${memoryStart}` // 마찬가지
 }
 
 
