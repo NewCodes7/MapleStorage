@@ -143,7 +143,7 @@ function popUpTimer(){
 }
 
 function timerResult(){
-    resultArea.innerText = `사냥 시작시각: ${result_startTime}`
+    resultArea.innerText = `사냥 시작시각: ${result_startTime}` //div로 감싸두는 게 좋을 듯 유지보수에 
 }
 
 
