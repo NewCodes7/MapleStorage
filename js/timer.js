@@ -44,7 +44,7 @@ function timerStart() {
     timerStartBtn.className = 'DeactivationStart';
 
 
-    clearTimer = setTimeout(clear, 20000); //2 * 60 * 60 * 1000
+    clearTimer = setTimeout(clear, 2 * 60 * 60 * 1000);
     memoryStart = clock.innerText;
     console.log(result_startTime);
 //경쿠 카운트
@@ -88,7 +88,7 @@ function totalCounting(){
     totalCount += 1;
     let countUpMinutes = ('0' + Math.floor(totalCount/60)).slice(-2);
     let countUpSeconds = ('0' + Math.floor(totalCount%60)).slice(-2);
-    totalTime.innerText = `총 사냥시간: ${countUpMinutes}:${countUpSeconds}`
+    totalTime.innerText = `사냥시간: ${countUpMinutes}:${countUpSeconds}`
 }
 
 
@@ -180,8 +180,8 @@ function popUpTimer(){
 }
 
 function timerResult(){
-    result_startTime.innerText = `사냥 시작시각: ${memoryStart}` 
-    result_stopTime.innerText = `사냥 종료시각: ${memoryStop}`
+    result_startTime.innerText = `시작: ${memoryStart}` 
+    result_stopTime.innerText = `종료: ${memoryStop}`
     result_totalCount.innerText = `${memoryTotalTime}`
     result_expCoupon.innerHTML += `x${memoryExpcoupon}`
     result_item.innerHTML += `x${memoryItem}`
