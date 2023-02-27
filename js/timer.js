@@ -37,7 +37,7 @@ const resultInfo = document.getElementsByClassName('resultInfo');
 
 function timerStart() {
     timerCancelBtn.disabled = false;
-    timerCancelBtn.className = 'ActivationCancle clickCursor';
+    timerCancelBtn.className = 'ActivationCancel clickCursor';
 
     timerStartBtn.disabled = true;
     timerStartBtn.style.backgroundImage = '';
@@ -151,7 +151,7 @@ function cancel(){
 
     timerCancelBtn.disabled = true;
     timerCancelBtn.style.backgroundImage = '';
-    timerCancelBtn.className = 'DeactivationCancle';
+    timerCancelBtn.className = 'DeactivationCancel';
     
     timerStartBtn.disabled = false;
     timerStartBtn.style.backgroundImage = '';
@@ -194,10 +194,10 @@ timerStartBtn.addEventListener('mouseleave', () => timerStartBtn.style.backgroun
 timerStartBtn.addEventListener('mousedown', () => timerStartBtn.style.backgroundImage = "url('img/SysOpt.BtOK.pressed.0.png')" );
 timerStartBtn.addEventListener('mouseup', () => timerStartBtn.style.backgroundImage = "url('img/SysOpt.BtOK.normal.0.png')" );
 
-timerCancelBtn.addEventListener('mouseover', () => timerCancelBtn.style.backgroundImage = "url('img/SysOpt.BtCancle.mouseOver.0.png')" );
-timerCancelBtn.addEventListener('mouseleave', () => timerCancelBtn.style.backgroundImage = "url('img/SysOpt.BtCancle.normal.0.png')" );
-timerCancelBtn.addEventListener('mousedown', () => timerCancelBtn.style.backgroundImage = "url('img/SysOpt.BtCancle.pressed.0.png')" );
-timerCancelBtn.addEventListener('mouseup', () => timerCancelBtn.style.backgroundImage = "url('img/SysOpt.BtCancle.normal.0.png')" );
+timerCancelBtn.addEventListener('mouseover', () => timerCancelBtn.style.backgroundImage = "url('img/SysOpt.BtCancel.mouseOver.0.png')" );
+timerCancelBtn.addEventListener('mouseleave', () => timerCancelBtn.style.backgroundImage = "url('img/SysOpt.BtCancel.normal.0.png')" );
+timerCancelBtn.addEventListener('mousedown', () => timerCancelBtn.style.backgroundImage = "url('img/SysOpt.BtCancel.pressed.0.png')" );
+timerCancelBtn.addEventListener('mouseup', () => timerCancelBtn.style.backgroundImage = "url('img/SysOpt.BtCancel.normal.0.png')" );
 timer.style.display = 'none';
 
 

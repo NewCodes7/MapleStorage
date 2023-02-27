@@ -202,12 +202,12 @@ npc조절하는거 결국 상위div를 백그라운드처럼 전체 영역으러
 }
 
 
-.ActivationCancle{
-    background-image: url('img/SysOpt.BtCancle.normal.0.png');
+.ActivationCancel{
+    background-image: url('img/SysOpt.BtCancel.normal.0.png');
 }
 
-.DeactivationCancle{
-    background-image: url('img/SysOpt.BtCancle.disabled.0.png');
+.DeactivationCancel{
+    background-image: url('img/SysOpt.BtCancel.disabled.0.png');
     cursor: url('img/Cursor.0.0.png'), auto;
 }
 
