@@ -18,6 +18,7 @@ let ticTac2;
 let reset;
 let reset2;
 let resetTotalCount;
+let clearTimer;
 
 const result_startTime = document.getElementById('result-starttime');
 const result_stopTime = document.getElementById('result-stoptime');
@@ -26,16 +27,31 @@ const result_expCoupon = document.getElementById('result-expcoupon');
 const result_item = document.getElementById('result-item');
 
 let memoryStart;
+let memoryStop;
+let memoryTotalTime;
+let memoryExpcoupon = 0;
+let memoryItem = 0;
+
+const resultInfo = document.getElementsByClassName('resultInfo');
 
 
 function timerStart() {
-    setTimeout(clear, 2000); //2 * 60 * 60 * 1000
+    timerCancelBtn.disabled = false;
+    timerCancelBtn.className = 'ActivationCancle clickCursor';
+
+    timerStartBtn.disabled = true;
+    timerStartBtn.style.backgroundImage = '';
+    timerStartBtn.className = 'DeactivationStart';
+
+
+    clearTimer = setTimeout(clear, 20000); //2 * 60 * 60 * 1000
     memoryStart = clock.innerText;
     console.log(result_startTime);
 //경쿠 카운트
     const timerNodeList = document.getElementsByName('timer');
     timerNodeList.forEach((node) => {
       if(node.checked)  {
+
         progressArea.style.display = 'block';
 
         const timerSet = Number(node.value);
@@ -45,7 +61,7 @@ function timerStart() {
         progressBar.classList.add(`on${timerSet}s`);
         const soundEffect = new Audio(`soundEffect/sound${timerSet}.mp3`);
         ticTac = setInterval(counting, 1000);
-        reset = setInterval(() => {count=-1; soundEffect.play(); }, timerSet*999); //왜 화살표 함수로?, 1000으로 했을 때 첫 주기에서 1초 더 홀딩함(4초 기다리고 바뀜)
+        reset = setInterval(() => {count=-1; soundEffect.play(); memoryExpcoupon+=1; }, timerSet*999); //왜 화살표 함수로?, 1000으로 했을 때 첫 주기에서 1초 더 홀딩함(4초 기다리고 바뀜)
         
         function counting(){
             let remainingTotalSeconds = timerSet - (++count);
@@ -86,7 +102,7 @@ function totalCounting(){
             const soundEffect2 = new Audio(`soundEffect/sound100.mp3`);
             ticTac2 = setInterval(counting2, 1000);
             counting2();
-            reset2 = setInterval(() => {remainingTotalSeconds2=101; soundEffect2.play();}, 100*999);
+            reset2 = setInterval(() => {remainingTotalSeconds2=101; soundEffect2.play(); memoryItem += 1;}, 100*999);
             function counting2(){
                 --remainingTotalSeconds2;
                 let remainingMinutes2 = ('0' + Math.floor(remainingTotalSeconds2/60)).slice(-2);
@@ -98,13 +114,30 @@ function totalCounting(){
             }
         }
         )
+
         timerOption.style.display = 'none';
         tictacArea.style.display = 'block';
     }
 
-    
+function timerCancel(){
+    tictacArea.style.display = 'none';
+    resultArea.style.display = 'block';
+    cancel();
+} 
+
+function clear(){
+    const soundFinish = new Audio('soundEffect/sound7200.mp3')
+    soundFinish.play();
+    cancel();
+    tictacArea.style.display = 'none';
+    resultArea.style.display = 'block';
+}
 
 function cancel(){
+    memoryStop = clock.innerText;
+    memoryTotalTime = totalTime.innerText;
+    timerResult();
+    clearInterval(clearTimer);
     clearInterval(ticTac);
     clearInterval(ticTac2);
     clearInterval(reset);
@@ -115,23 +148,25 @@ function cancel(){
     progressBar2.className = '';
     remainingTime2.innerText = '';
     totalTime.innerText = '';
-}
 
+    timerCancelBtn.disabled = true;
+    timerCancelBtn.style.backgroundImage = '';
+    timerCancelBtn.className = 'DeactivationCancle';
     
-function clear(){
-    const soundFinish = new Audio('soundEffect/sound7200.mp3')
-    soundFinish.play();
-    cancel();
-    tictacArea.style.display = 'none';
-    resultArea.style.display = 'block';
-    timerResult();
+    timerStartBtn.disabled = false;
+    timerStartBtn.style.backgroundImage = '';
+    timerStartBtn.className = 'ActivationStart clickCursor';
+    timerStartBtn.onclick = timerFirstScreen;
 }
 
-function timerCancel(){
+function timerFirstScreen(){
+    for(let i=0; i<resultInfo.length; i++){
+        resultInfo[i].innerText = '';
+    } //  htmlCollection 순회
+    resultArea.style.display = 'none';
     timerOption.style.display = 'block';
-    tictacArea.style.display = 'none';
-    cancel();
-    }
+    timerStartBtn.onclick = timerStart;
+}
 
 function popUpTimer(){
     timer.style.backgroundImage = "url('img/OptionMenu5.backgrnd.png')";
@@ -146,10 +181,10 @@ function popUpTimer(){
 
 function timerResult(){
     result_startTime.innerText = `사냥 시작시각: ${memoryStart}` 
-    result_stopTime.innerText = `사냥 시작시각: ${memoryStart}` //변수저장
-    result_totalCount.innerText = `사냥 시작시각: ${memoryStart}` //변수저장
-    result_expCoupon.innerText = `사냥 시작시각: ${memoryStart}` //변수저장 + setinterval에 끼워두기
-    result_item.innerText = `사냥 시작시각: ${memoryStart}` // 마찬가지
+    result_stopTime.innerText = `사냥 종료시각: ${memoryStop}`
+    result_totalCount.innerText = `${memoryTotalTime}`
+    result_expCoupon.innerHTML += `x${memoryExpcoupon}`
+    result_item.innerHTML += `x${memoryItem}`
 }
 
 

@@ -174,7 +174,6 @@ npc조절하는거 결국 상위div를 백그라운드처럼 전체 영역으러
 
 
 #timerStartBtn{
-    background-image: url('img/SysOpt.BtOK.normal.0.png');
     background-color: transparent; /* make the button transparent */
     background-repeat: no-repeat;  /* make the background image appear only once */
     background-position: 0px 0px;  /* equivalent to 'top left' */
@@ -185,13 +184,31 @@ npc조절하는거 결국 상위div를 백그라운드처럼 전체 영역으러
 }
 
 #timerCancelBtn{
-    background-image: url('img/SysOpt.BtCancle.normal.0.png');
     background-color: transparent; /* make the button transparent */
     background-repeat: no-repeat;  /* make the background image appear only once */
     background-position: 0px 0px;  /* equivalent to 'top left' */
     border: none;           /* assuming we don't want any borders */
     height: 18px;           /* make this the size of your image */
     width: 40px;
+}
+
+.ActivationStart{
+    background-image: url('img/SysOpt.BtOK.normal.0.png');
+}
+
+.DeactivationStart{
+    background-image: url('img/SysOpt.BtOK.disabled.0.png');
+    cursor: url('img/Cursor.0.0.png'), auto;
+}
+
+
+.ActivationCancle{
+    background-image: url('img/SysOpt.BtCancle.normal.0.png');
+}
+
+.DeactivationCancle{
+    background-image: url('img/SysOpt.BtCancle.disabled.0.png');
+    cursor: url('img/Cursor.0.0.png'), auto;
 }
 
 #timer-option{
@@ -212,9 +229,7 @@ npc조절하는거 결국 상위div를 백그라운드처럼 전체 영역으러
     z-index: 1.8;
 }
 
-#tictac-area{
-    height: 200px;
-}
+
 
 
 #character{
@@ -231,6 +246,7 @@ body{
 #tictac-area{
     position: relative;
     top: 25px;
+    height: 200px;
 }
 
 #totalTime{
@@ -281,6 +297,23 @@ body{
     position: relative;
     z-index: 2;
     top: 7%;
+}
+
+#result-area{
+    position: relative;
+    height: 150px;
+    text-align: center;
+    display: flex;
+    top: 15%;
+}
+
+.resultInfo{
+    margin-bottom: 10px;
+    font-size: large;
+}
+
+#result-expcoupon, #result-item{
+    font-size: 23px;
 }
 
 .on100s{

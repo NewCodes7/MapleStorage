@@ -80,8 +80,8 @@
 
 
                 <div class="btn-wrapper">
-                    <button onclick="timerStart()" id="timerStartBtn" class="clickCursor"></button>
-                    <button onclick="timerCancel()" id="timerCancelBtn" class="clickCursor"></button>
+                    <button onclick="timerStart()" id="timerStartBtn" class="ActivationStart clickCursor"></button>
+                    <button onclick="timerCancel()" id="timerCancelBtn" class="DeactivationCancle" disabled></button>
                 </div>
                 
 
@@ -99,11 +99,11 @@
             </div>
 
             <div id="result-area">
-                <div id="result-starttime"></div>
-                <div id="result-stoptime"></div>
-                <div id="result-totalcount"></div>
-                <div id="result-expcoupon"></div>
-                <div id="result-item"></div>
+                <div id="result-starttime" class="resultInfo"></div>
+                <div id="result-stoptime" class="resultInfo"></div>
+                <div id="result-totalcount" class="resultInfo"></div>
+                <div id="result-expcoupon" class="resultInfo"><img src="img/expcoupon.png" alt=""></div>
+                <div id="result-item" class="resultInfo"><img src="img/meso.png" alt=""></div>
             </div>
             
         </div>
