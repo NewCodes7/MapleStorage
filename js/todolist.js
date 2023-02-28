@@ -71,6 +71,9 @@ todoInput.addEventListener("submit", handleTodo);
 todoNpc.addEventListener('click', popUpQuest);
 
 function popUpQuest(){
+    deleteTaxiWindow();
+    deleteTimerWindow();
+
     if(quest.style.display == 'block'){
         quest.style.display = 'none';
         todoList.textContent = '';

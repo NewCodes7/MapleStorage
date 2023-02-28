@@ -46,7 +46,7 @@ function timerStart() {
 
     clearTimer = setTimeout(clear, 2 * 60 * 60 * 1000);
     memoryStart = clock.innerText;
-    console.log(result_startTime);
+
 //경쿠 카운트
     const timerNodeList = document.getElementsByName('timer');
     timerNodeList.forEach((node) => {
@@ -166,18 +166,22 @@ function timerFirstScreen(){
     resultArea.style.display = 'none';
     timerOption.style.display = 'block';
     timerStartBtn.onclick = timerStart;
+    timer.style.display = 'none';
 }
 
 function popUpTimer(){
+    deleteTaxiWindow();
+    deleteQuestWindow();
+
     timer.style.backgroundImage = "url('img/OptionMenu5.backgrnd.png')";
     if(timer.style.display == 'block'){
         timer.style.display = 'none';
     } else{
         timer.style.display = 'block';
-        tictacArea.style.display = 'none';
-        resultArea.style.display = 'none';
     }
 }
+tictacArea.style.display = 'none';
+resultArea.style.display = 'none';
 
 function timerResult(){
     result_startTime.innerText = `시작: ${memoryStart}` 

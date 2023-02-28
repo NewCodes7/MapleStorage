@@ -6,13 +6,17 @@ const waitingClick = document.querySelectorAll('.waitingClick');
 const logo = document.getElementById('logo');
 const townIconWrapper = document.getElementById('townIcon-Wrapper');
 
+
 function onTaxi(){
+    deleteQuestWindow();
+    deleteTimerWindow();
     if(taxiInfo.style.display == 'block'){
         taxiInfo.style.display = 'none';
         townIconWrapper.textContent = '';
     } else{
         taxiInfo.style.display = 'block';
         townIconWrapper.textContent = '';
+        isTaxi = true;
     }
     taxiInfo.style.backgroundImage = "url('img/SysOpt.backgrnd.png')";
     selectTown('헤네시스');
