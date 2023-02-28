@@ -173,25 +173,6 @@ npc조절하는거 결국 상위div를 백그라운드처럼 전체 영역으러
 }
 
 
-#timerStartBtn{
-    background-color: transparent; /* make the button transparent */
-    background-repeat: no-repeat;  /* make the background image appear only once */
-    background-position: 0px 0px;  /* equivalent to 'top left' */
-    border: none;           /* assuming we don't want any borders */
-    height: 18px;           /* make this the size of your image */
-    width: 40px;
-    margin-right: 3px;
-}
-
-#timerCancelBtn{
-    background-color: transparent; /* make the button transparent */
-    background-repeat: no-repeat;  /* make the background image appear only once */
-    background-position: 0px 0px;  /* equivalent to 'top left' */
-    border: none;           /* assuming we don't want any borders */
-    height: 18px;           /* make this the size of your image */
-    width: 40px;
-}
-
 .ActivationStart{
     background-image: url('img/SysOpt.BtOK.normal.0.png');
 }
@@ -213,21 +194,16 @@ npc조절하는거 결국 상위div를 백그라운드처럼 전체 영역으러
 
 #timer-option{
     position: relative;
-    width: 150px;
+    width: 200px;
     margin: auto;
     height: 250px;
     top: 15%;
     line-height:2;
+    text-align: center;
 }
 
-.btn-wrapper{
-    position: absolute;
-    width: 100%;
-    bottom: 12%;
-    display: flex;
-    justify-content: center;
-    z-index: 1.8;
-}
+
+
 
 
 
@@ -373,3 +349,68 @@ body{
     text-decoration-thickness: 0.7px;
   }
 
+
+
+#btnAndTooltip{
+    position: absolute;
+    width: 100%;
+    bottom: 9%;
+    display: flex;
+    justify-content: center;
+    z-index: 1.8;
+}
+
+.btn-wrapper{
+    padding-left: 5%;
+    padding-top: 3px;
+    padding-right: 3px;
+}
+
+#timerStartBtn{
+    background-color: transparent; /* make the button transparent */
+    background-repeat: no-repeat;  /* make the background image appear only once */
+    background-position: 0px 0px;  /* equivalent to 'top left' */
+    border: none;           /* assuming we don't want any borders */
+    height: 18px;           /* make this the size of your image */
+    width: 40px;
+
+}
+
+#timerCancelBtn{
+    background-color: transparent; /* make the button transparent */
+    background-repeat: no-repeat;  /* make the background image appear only once */
+    background-position: 0px 0px;  /* equivalent to 'top left' */
+    border: none;           /* assuming we don't want any borders */
+    height: 18px;           /* make this the size of your image */
+    width: 40px;
+}
+
+  #tooltip{
+    z-index: 3;
+    cursor: url('img/Cursor.0.0.png'), auto;
+  }
+
+  .tooltip-button{
+    background-image: url('img/tooltip.png');
+    background-color: transparent; /* make the button transparent */
+    background-repeat: no-repeat;  /* make the background image appear only once */
+    background-position: 0px 0px;  /* equivalent to 'top left' */
+    border: none;           /* assuming we don't want any borders */
+    height: 28px;           /* make this the size of your image */
+    width: 28px;
+  }
+  
+
+  
+  .tooltip-text {
+    display: none;
+    position: absolute;
+    right: 9%;
+    bottom: 10%;
+    border-radius: 5%;
+    width: 120px;
+    padding: 5px;
+    background-color: #000;
+    color: #fff;
+  }
+  
