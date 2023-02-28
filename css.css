@@ -358,6 +358,8 @@ body{
     display: flex;
     justify-content: center;
     z-index: 1.8;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 .btn-wrapper{
@@ -414,3 +416,7 @@ body{
     color: #fff;
   }
   
+
+  .tooltip-button:hover .tooltip-text {
+    display: block;
+  }
