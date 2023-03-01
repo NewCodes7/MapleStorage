@@ -71,17 +71,19 @@ todoInput.addEventListener("submit", handleTodo);
 todoNpc.addEventListener('click', popUpQuest);
 
 function popUpQuest(){
-    deleteTaxiWindow();
-    deleteTimerWindow();
+    if (window.innerWidth < 1050) {
+        deleteTaxiWindow();
+        deleteTimerWindow();
+    }
+    
 
-    if(quest.style.display == 'block'){
-        quest.style.display = 'none';
+    if(quest.style.visibility == 'visible'){
+        quest.style.visibility = 'hidden';
         todoList.textContent = '';
     } else{
-        quest.style.display = 'block';
+        quest.style.visibility = 'visible';
         todoList.textContent = '';
     }
-    quest.style.backgroundImage = "url('img/Quest.list.backgrnd.png')";
 
     if(listArray.length != 0){    
         let i = 0;
@@ -115,7 +117,5 @@ function popUpQuest(){
         i++;}
     }
 }
-quest.style.display = 'none';
-
 
 

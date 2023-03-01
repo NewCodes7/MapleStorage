@@ -4,21 +4,21 @@ let isTimer = false;
 
 function deleteTaxiWindow(){
     if(isTaxi = true){
-        taxiInfo.style.display = 'none';
+        taxiInfo.style.visibility = 'hidden';
         isTaxi = false;
     }
 }
 
 function deleteQuestWindow(){
     if(isQuest = true){
-        quest.style.display = 'none';
+        quest.style.visibility = 'hidden';
         isQuest = false;
     }
 }
 
 function deleteTimerWindow(){
     if(isTimer = true){
-        timer.style.display = 'none';
+        timer.style.visibility = 'hidden';
         isTimer = false;
     }
 }

@@ -67,10 +67,13 @@ body{
     width: 300px;
     height: 300px;
     background-repeat: no-repeat;
-    position: relative;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
     background-size : contain;
     background-position: center;
-    margin: auto;
+    margin: 0px auto;
+    background-image: url('img/SysOpt.backgrnd.png');
 }
 
 #townIcon-Wrapper{
@@ -109,6 +112,12 @@ body{
     justify-content: space-between;
 }
 
+@media (max-width: 1050px) {
+    .option-container{
+        display: block;
+    }
+  }
+
 .scene2{
     position: absolute;
     width:100%;
@@ -137,6 +146,7 @@ npc조절하는거 결국 상위div를 백그라운드처럼 전체 영역으러
 그 상위div의 width100%로 해야 flex먹지!! */
 
 #quest{
+    background-image: url('img/Quest.list.backgrnd.png');
     width: 300px;
     height: 300px;
     background-repeat: no-repeat;
@@ -144,7 +154,9 @@ npc조절하는거 결국 상위div를 백그라운드처럼 전체 영역으러
     background-size : contain;
     background-position: center;
     margin: auto;
-    
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .todo-text{
@@ -163,13 +175,16 @@ npc조절하는거 결국 상위div를 백그라운드처럼 전체 영역으러
 }
 
 #TIMER{
+    background-image: url('img/OptionMenu5.backgrnd.png');
     width: 430px;
     height: 300px;
     background-repeat: no-repeat;
     position: relative;
     background-size : contain;
     background-position: center;
-    margin: auto;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 
@@ -260,7 +275,6 @@ body{
     height:100%;
     left:0;
     top:0;
-    z-index: 1;
 }
 
 #remainingTime{

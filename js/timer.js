@@ -166,18 +166,20 @@ function timerFirstScreen(){
     resultArea.style.display = 'none';
     timerOption.style.display = 'block';
     timerStartBtn.onclick = timerStart;
-    timer.style.display = 'none';
+    timer.style.visibility = 'hidden';
 }
 
 function popUpTimer(){
-    deleteTaxiWindow();
-    deleteQuestWindow();
+    if (window.innerWidth < 1050) {
+        deleteTaxiWindow();
+        deleteQuestWindow();
+    }
+    
 
-    timer.style.backgroundImage = "url('img/OptionMenu5.backgrnd.png')";
-    if(timer.style.display == 'block'){
-        timer.style.display = 'none';
+    if(timer.style.visibility == 'visible'){
+        timer.style.visibility = 'hidden';
     } else{
-        timer.style.display = 'block';
+        timer.style.visibility = 'visible';
         tooltipText.classList.add('hidden')
     }
 }
@@ -203,7 +205,7 @@ timerCancelBtn.addEventListener('mouseover', () => timerCancelBtn.style.backgrou
 timerCancelBtn.addEventListener('mouseleave', () => timerCancelBtn.style.backgroundImage = "url('img/SysOpt.BtCancel.normal.0.png')" );
 timerCancelBtn.addEventListener('mousedown', () => timerCancelBtn.style.backgroundImage = "url('img/SysOpt.BtCancel.pressed.0.png')" );
 timerCancelBtn.addEventListener('mouseup', () => timerCancelBtn.style.backgroundImage = "url('img/SysOpt.BtCancel.normal.0.png')" );
-timer.style.display = 'none';
+
 
 const button = document.querySelector('.tooltip-button'); //쿼리셀렉터와 클래스네임의 차이점??
 const tooltipText = document.querySelector('.tooltip-text');
