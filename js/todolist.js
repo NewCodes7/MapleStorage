@@ -118,14 +118,4 @@ function popUpQuest(){
 quest.style.display = 'none';
 
 
-const button = document.querySelector('.tooltip-button'); //쿼리셀렉터와 클래스네임의 차이점??
-const tooltipText = document.querySelector('.tooltip-text');
-
-button.addEventListener('mouseover', () => {
-  tooltipText.style.display = 'block';
-});
-
-button.addEventListener('mouseout', () => {
-  tooltipText.style.display = 'none';
-});
 

@@ -351,21 +351,15 @@ body{
 
 
 
-#btnAndTooltip{
-    position: relative;
+.btn-wrapper{
+    position: absolute;
+    bottom: 10%;
     width: 100%;
-    bottom: 3%;
     display: flex;
     justify-content: center;
     z-index: 1.8;
     flex-direction: row;
     flex-wrap: nowrap;
-}
-
-.btn-wrapper{
-    padding-left: 5%;
-    padding-top: 3px;
-    padding-right: 3px;
 }
 
 #timerStartBtn{
@@ -375,7 +369,7 @@ body{
     border: none;           /* assuming we don't want any borders */
     height: 18px;           /* make this the size of your image */
     width: 40px;
-
+    margin-right: 3px;
 }
 
 #timerCancelBtn{
@@ -387,9 +381,14 @@ body{
     width: 40px;
 }
 
+
   #tooltip{
-    z-index: 3;
+    position: absolute;
     cursor: url('img/Cursor.0.0.png'), auto;
+    bottom: 7%;
+    right: 5%;
+    width: 175px;
+    height: 56px;
   }
 
   .tooltip-button{
@@ -400,14 +399,14 @@ body{
     border: none;           /* assuming we don't want any borders */
     height: 28px;           /* make this the size of your image */
     width: 28px;
+    margin-top: 24px;
   }
   
 
   
   .tooltip-text {
-    display: none;
     position: absolute;
-    right: 9%;
+    right: 10%;
     bottom: 10%;
     border-radius: 5%;
     width: 120px;

@@ -178,6 +178,7 @@ function popUpTimer(){
         timer.style.display = 'none';
     } else{
         timer.style.display = 'block';
+        tooltipText.classList.add('hidden')
     }
 }
 tictacArea.style.display = 'none';
@@ -203,5 +204,14 @@ timerCancelBtn.addEventListener('mouseleave', () => timerCancelBtn.style.backgro
 timerCancelBtn.addEventListener('mousedown', () => timerCancelBtn.style.backgroundImage = "url('img/SysOpt.BtCancel.pressed.0.png')" );
 timerCancelBtn.addEventListener('mouseup', () => timerCancelBtn.style.backgroundImage = "url('img/SysOpt.BtCancel.normal.0.png')" );
 timer.style.display = 'none';
+
+const button = document.querySelector('.tooltip-button'); //쿼리셀렉터와 클래스네임의 차이점??
+const tooltipText = document.querySelector('.tooltip-text');
+
+button.addEventListener('click', () => {
+  tooltipText.classList.toggle('hidden');
+  console.log('hi');
+});
+
 
 
