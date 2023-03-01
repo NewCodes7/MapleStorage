@@ -163,7 +163,7 @@ npc조절하는거 결국 상위div를 백그라운드처럼 전체 영역으러
 }
 
 #TIMER{
-    width: 500px;
+    width: 430px;
     height: 300px;
     background-repeat: no-repeat;
     position: relative;
@@ -353,7 +353,7 @@ body{
 
 .btn-wrapper{
     position: absolute;
-    bottom: 10%;
+    bottom: 8%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -370,6 +370,8 @@ body{
     height: 18px;           /* make this the size of your image */
     width: 40px;
     margin-right: 3px;
+    margin-left: 38px;
+    margin-top: 20px;
 }
 
 #timerCancelBtn{
@@ -379,17 +381,21 @@ body{
     border: none;           /* assuming we don't want any borders */
     height: 18px;           /* make this the size of your image */
     width: 40px;
+    margin-top: 20px;
+    margin-right: 3px;
 }
 
 
-  #tooltip{
+
+
+  /* #tooltip{
     position: absolute;
     cursor: url('img/Cursor.0.0.png'), auto;
     bottom: 7%;
-    right: 5%;
-    width: 175px;
+    right: 1%;
+    width: 160px;
     height: 56px;
-  }
+  } */
 
   .tooltip-button{
     background-image: url('img/tooltip.png');
@@ -399,20 +405,21 @@ body{
     border: none;           /* assuming we don't want any borders */
     height: 28px;           /* make this the size of your image */
     width: 28px;
-    margin-top: 24px;
+    margin-top: 15px;
   }
   
 
   
   .tooltip-text {
     position: absolute;
-    right: 10%;
+    right: 5%;
     bottom: 10%;
     border-radius: 5%;
-    width: 120px;
+    width: 105px;
     padding: 5px;
     background-color: #000;
     color: #fff;
+    font-size: 14px;
   }
   
 
