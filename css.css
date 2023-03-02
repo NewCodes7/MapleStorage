@@ -64,24 +64,21 @@ body{
 }
 
 
+#clickCursor{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 5;
+}
+
 
 #townIcon-Wrapper{
     position: relative;
     width: 180px;
     margin: auto;
     top: 45%;
-}
-
-.clickCursor{
-    animation: animate 0.8s infinite;
-}
-@keyframes animate{
-    0% { 
-      cursor: url("img/clickCursor1.png"), auto;
-    }
-    100% { 
-      cursor: url("img/clickCursor2.png"), auto;
-    }
 }
 
 .scene1{

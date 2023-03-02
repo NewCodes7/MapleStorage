@@ -22,6 +22,8 @@
 
     <div id="background"></div>
     <audio id="bgm" controls src="music/(구)로그인.mp3"></audio>
+    
+    <img id="clickCursor" src="img/Cursor.1.gif">
 
     <form class="logIn-form">
         <input
@@ -65,34 +67,34 @@
             <label for="100s" class="timer-text">100초 아이템 수확</label>
             <br> -->
             <div id="timer-option">
-                <input type="radio" id="600s" name="timer" value="600"  class="clickCursor">
-                <label for="600s" class="clickCursor">10분 경험치 쿠폰</label>
+                <input type="radio" id="600s" name="timer" value="600"  class="waitingClick">
+                <label for="600s" class="waitingClick">10분 경험치 쿠폰</label>
                 <br>
-                <input type="radio" id="900s" name="timer" value="900"  class="clickCursor">
-                <label for="900s" class="clickCursor">15분 경험치 쿠폰</label>
+                <input type="radio" id="900s" name="timer" value="900"  class="waitingClick">
+                <label for="900s" class="waitingClick">15분 경험치 쿠폰</label>
                 <br>
-                <input type="radio" id="1200s" name="timer" value="1200"  class="clickCursor">
-                <label for="1200s" class="clickCursor">20분 경험치 쿠폰</label>
+                <input type="radio" id="1200s" name="timer" value="1200"  class="waitingClick">
+                <label for="1200s" class="waitingClick">20분 경험치 쿠폰</label>
                 <br>
-                <input type="radio" id="1800s" name="timer" value="1800" class="clickCursor">
-                <label for="1800s" class="clickCursor">30분 경험치 쿠폰</label>
+                <input type="radio" id="1800s" name="timer" value="1800" class="waitingClick">
+                <label for="1800s" class="waitingClick">30분 경험치 쿠폰</label>
                 <br>
-                <input type="radio" id="3600s" name="timer" value="3600" class="clickCursor">
-                <label for="3600s" class="clickCursor">60분 경험치 쿠폰</label>
+                <input type="radio" id="3600s" name="timer" value="3600" class="waitingClick">
+                <label for="3600s" class="waitingClick">60분 경험치 쿠폰</label>
                 <br>
 
-                <input type="checkbox" id="100s" name="get-item" class="clickCursor">
-                <label for="100s" class="clickCursor">100초 아이템 줍기</label>
+                <input type="checkbox" id="100s" name="get-item" class="waitingClick">
+                <label for="100s" class="waitingClick">100초 아이템 줍기</label>
             </div>
         
 
 
                 
                     <div class="btn-wrapper">
-                        <button onclick="timerStart()" id="timerStartBtn" class="ActivationStart clickCursor"></button>
+                        <button onclick="timerStart()" id="timerStartBtn" class="ActivationStart waitingClick"></button>
                         <button onclick="timerCancel()" id="timerCancelBtn" class="DeactivationCancel" disabled></button>
                     <div id="tooltip">
-                                <button class="tooltip-button clickCursor"></button>
+                                <button class="tooltip-button waitingClick"></button>
                                 <div class="tooltip-text" class="hidden">2시간 후 타이머가 자동 종료됩니다!</div>
                             </div>
                     </div>
@@ -138,8 +140,8 @@
             <div class="npc-container">
                 <img id="taxi" class="waitingClick" src="img/taxi.png">
                 <!-- <img src="img/character.png" id="character"> -->
-                <img src="img/todoNpc.gif" id="todoNpc" class="clickCursor">
-                <img src="img/timerNpc.gif" id="timerNpc" class="clickCursor">
+                <img src="img/todoNpc.gif" id="todoNpc" class="waitingClick">
+                <img src="img/timerNpc.gif" id="timerNpc" class="waitingClick">
             </div class="npc-container">
         </div>
     </section>
@@ -157,5 +159,7 @@
     <script src="js/character.js"></script>
     <script src="js/toggle.js"></script>
     <script src="js/window.js"></script>
+    <script src="js/createImage.js"></script>
+    <script src="js/clickCursor.js"></script>
 </body>
 </html>

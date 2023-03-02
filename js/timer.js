@@ -37,8 +37,13 @@ const resultInfo = document.getElementsByClassName('resultInfo');
 
 
 function timerStart() {
+    clickCursor.style.display = 'none';
+    timerStartBtn.style.cursor = '';
+
     timerCancelBtn.disabled = false;
-    timerCancelBtn.className = 'ActivationCancel clickCursor';
+    timerCancelBtn.className = 'ActivationCancel waitingClick3';
+    const waitingClick3 = document.querySelectorAll('.waitingClick3');
+    addClickCursor(waitingClick3);
 
     timerStartBtn.disabled = true;
     timerStartBtn.style.backgroundImage = '';
@@ -128,6 +133,8 @@ function timerCancel(){
     tictacArea.style.display = 'none';
     resultArea.style.display = 'block';
     cancel();
+    clickCursor.style.display = 'none';
+    timerCancelBtn.style.cursor = '';
 } 
 
 function clear(){
@@ -160,7 +167,7 @@ function cancel(){
     
     timerStartBtn.disabled = false;
     timerStartBtn.style.backgroundImage = '';
-    timerStartBtn.className = 'ActivationStart clickCursor';
+    timerStartBtn.className = 'ActivationStart waitingClick';
     timerStartBtn.onclick = timerFirstScreen;
 }
 
@@ -219,16 +226,3 @@ button.addEventListener('click', () => {
   tooltipText.classList.toggle('hidden');
 });
 
-function loadImage(url) {
-    const image = new Image();
-    image.src = url;
-  
-    return image;
-  }
-  
-  const BtOkMouseOver = loadImage('img/SysOpt.BtOK.mouseOver.0.png');
-  const BtOkNormal = loadImage('img/SysOpt.BtOK.normal.0.png');
-  const BtOkPressed = loadImage('img/SysOpt.BtOK.pressed.0.png');
-  const BtCancelMouseOver = loadImage('img/SysOpt.BtCancel.mouseOver.0.png');
-  const BtCancelNormal = loadImage('img/SysOpt.BtCancel.normal.0.png');
-  const BtCancelPressed = loadImage('img/SysOpt.BtCancel.pressed.0.png');

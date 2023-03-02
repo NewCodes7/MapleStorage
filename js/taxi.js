@@ -2,15 +2,13 @@ const taxi = document.getElementById('taxi');
 const bgm = document.getElementById('bgm');
 const background = document.getElementById('background');
 const taxiInfo = document.getElementById('taxiInfo');
-const waitingClick = document.querySelectorAll('.waitingClick');
 const logo = document.getElementById('logo');
 const townIconWrapper = document.getElementById('townIcon-Wrapper');
 
 const townIcon = document.querySelectorAll('.townIcon');
 
 for (let i = 0; i < townIcon.length; i++) {
-    townIcon[i].addEventListener('mouseenter', event => event.target.classList.add('clickCursor'));
-    townIcon[i].addEventListener('mouseleave', event => event.target.classList.remove('clickCursor'));
+    townIcon[i].classList.add('waitingClick');
     townIcon[i].addEventListener('click', moveTown); 
   }
 
@@ -51,10 +49,7 @@ function goHome(){
     }, false);
 }
 
-waitingClick.forEach(element => {
-    element.addEventListener('mouseenter', event => event.target.classList.add('clickCursor'));
-    element.addEventListener('mouseleave', event => event.target.classList.remove('clickCursor'));
-});
+
 
 
 taxi.addEventListener('click', onTaxi);

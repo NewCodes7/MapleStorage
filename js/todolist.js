@@ -36,8 +36,10 @@ function handleTodo(event){
     button.innerText = '🗑';
     button.style.border = 'none'
     button.style.backgroundColor = 'transparent'
-    button.classList.add('clickCursor');
-    input.classList.add('clickCursor');
+    button.classList.add('waitingClick2');
+    input.classList.add('waitingClick2');
+    const waitingClick2 = document.querySelectorAll('.waitingClick2');
+    addClickCursor(waitingClick2);
     li.style.textAlign = 'left';
     li.style.marginTop = '2px';
 
@@ -85,9 +87,10 @@ function popUpQuest(){
         todoList.textContent = '';
     }
 
+    listArray = JSON.parse(localStorage.getItem('newtodo'));
+
     if(listArray.length != 0){    
         let i = 0;
-        listArray = JSON.parse(localStorage.getItem('newtodo'));
         while(i<listArray.length){
             // 중복 어떻게 제걸할 것인가?
         const li = document.createElement('li');
@@ -107,8 +110,10 @@ function popUpQuest(){
         button.innerText = '🗑';
         button.style.border = 'none'
         button.style.backgroundColor = 'transparent'
-        button.classList.add('clickCursor');
-        input.classList.add('clickCursor');
+        button.classList.add('waitingClick2');
+    input.classList.add('waitingClick2');
+    const waitingClick2 = document.querySelectorAll('.waitingClick2');
+    addClickCursor(waitingClick2);
         li.style.textAlign = 'left';
         li.style.marginTop = '2px';
     
