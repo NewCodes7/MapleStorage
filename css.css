@@ -101,7 +101,7 @@ body{
     justify-content: space-between;
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1128px) {
     .option-container{
         display: block;
         width: 100%;
@@ -113,12 +113,17 @@ body{
         left : 50%;
         transform : translate(-50%);
     }
-
   }
 
-  @media (min-width: 1051px){
+  @media (min-width: 1129px){
     .positionChange{
         position: relative;
+    }
+    .taxi_div{
+        margin-left: 10%;
+    }
+    #TIMER{
+        margin-right: 10%;
     }
   } 
 
@@ -128,7 +133,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
 
-    width: 300px;
+    width: 240px;
     height: 300px;
 }
 
@@ -138,7 +143,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
 
-    width: 300px;
+    width: 220px;
     height: 300px;
 }
 
@@ -184,13 +189,13 @@ npc조절하는거 결국 상위div를 백그라운드처럼 전체 영역으러
 
 .todo-text{
     position: relative;
-    left: 70px;
+    left: 30px;
     top: 22px;
 }    
 
 .todo-list{
     position: relative;
-    width: 58%;
+    width: 80%;
     margin: auto;
     top: 23px;
     height: 230px;
@@ -452,3 +457,13 @@ body{
   .tooltip-button:hover .tooltip-text {
     display: block;
   }
+
+  footer{
+    position: absolute;
+    bottom: 0.3%;
+    font-size: 14px;
+    background-color: #000;
+    border-radius: 10%;
+    color: #fff;
+}
+

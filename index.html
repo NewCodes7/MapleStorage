@@ -66,23 +66,23 @@
             <br> -->
             <div id="timer-option">
                 <input type="radio" id="600s" name="timer" value="600"  class="clickCursor">
-                <label for="600s">10분 경험치 쿠폰</label>
+                <label for="600s" class="clickCursor">10분 경험치 쿠폰</label>
                 <br>
                 <input type="radio" id="900s" name="timer" value="900"  class="clickCursor">
-                <label for="900s">15분 경험치 쿠폰</label>
+                <label for="900s" class="clickCursor">15분 경험치 쿠폰</label>
                 <br>
                 <input type="radio" id="1200s" name="timer" value="1200"  class="clickCursor">
-                <label for="1200s">20분 경험치 쿠폰</label>
+                <label for="1200s" class="clickCursor">20분 경험치 쿠폰</label>
                 <br>
                 <input type="radio" id="1800s" name="timer" value="1800" class="clickCursor">
-                <label for="1800s">30분 경험치 쿠폰</label>
+                <label for="1800s" class="clickCursor">30분 경험치 쿠폰</label>
                 <br>
                 <input type="radio" id="3600s" name="timer" value="3600" class="clickCursor">
-                <label for="3600s">60분 경험치 쿠폰</label>
+                <label for="3600s" class="clickCursor">60분 경험치 쿠폰</label>
                 <br>
 
                 <input type="checkbox" id="100s" name="get-item" class="clickCursor">
-                <label for="100s">100초 아이템 줍기</label>
+                <label for="100s" class="clickCursor">100초 아이템 줍기</label>
             </div>
         
 
@@ -92,7 +92,7 @@
                         <button onclick="timerStart()" id="timerStartBtn" class="ActivationStart clickCursor"></button>
                         <button onclick="timerCancel()" id="timerCancelBtn" class="DeactivationCancel" disabled></button>
                     <div id="tooltip">
-                                <button class="tooltip-button"></button>
+                                <button class="tooltip-button clickCursor"></button>
                                 <div class="tooltip-text" class="hidden">2시간 후 타이머가 자동 종료됩니다!</div>
                             </div>
                     </div>
@@ -145,7 +145,9 @@
     </section>
 
     <div id="clock" style="display: none;"></div>
-    
+    <footer>
+        <address>&nbsp;hani103201@naver.com&nbsp;</address>
+    </footer>
     
     <script src="js/greeting.js"></script>
     <script src="js/clock.js"></script>
@@ -154,5 +156,6 @@
     <script src="js/timer.js"></script>
     <script src="js/character.js"></script>
     <script src="js/toggle.js"></script>
+    <script src="js/window.js"></script>
 </body>
 </html>

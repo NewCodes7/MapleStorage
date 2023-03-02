@@ -35,6 +35,7 @@ let memoryItem = 0;
 const resultInfo = document.getElementsByClassName('resultInfo');
 
 
+
 function timerStart() {
     timerCancelBtn.disabled = false;
     timerCancelBtn.className = 'ActivationCancel clickCursor';
@@ -200,15 +201,15 @@ function timerResult(){
 
 
 timerNpc.addEventListener('click', popUpTimer);
-timerStartBtn.addEventListener('mouseover', () => timerStartBtn.style.backgroundImage = "url('img/SysOpt.BtOK.mouseOver.0.png')" );
-timerStartBtn.addEventListener('mouseleave', () => timerStartBtn.style.backgroundImage = "url('img/SysOpt.BtOK.normal.0.png')" );
-timerStartBtn.addEventListener('mousedown', () => timerStartBtn.style.backgroundImage = "url('img/SysOpt.BtOK.pressed.0.png')" );
-timerStartBtn.addEventListener('mouseup', () => timerStartBtn.style.backgroundImage = "url('img/SysOpt.BtOK.normal.0.png')" );
+timerStartBtn.addEventListener('mouseover', () => timerStartBtn.style.backgroundImage = "url('" + BtOkMouseOver.src + "')");
+timerStartBtn.addEventListener('mouseleave', () => timerStartBtn.style.backgroundImage = "url('" + BtOkNormal.src + "')" );
+timerStartBtn.addEventListener('mousedown', () => timerStartBtn.style.backgroundImage = "url('" + BtOkPressed.src + "')" );
+timerStartBtn.addEventListener('mouseup', () => timerStartBtn.style.backgroundImage = "url('" + BtOkNormal.src + "')" );
 
-timerCancelBtn.addEventListener('mouseover', () => timerCancelBtn.style.backgroundImage = "url('img/SysOpt.BtCancel.mouseOver.0.png')" );
-timerCancelBtn.addEventListener('mouseleave', () => timerCancelBtn.style.backgroundImage = "url('img/SysOpt.BtCancel.normal.0.png')" );
-timerCancelBtn.addEventListener('mousedown', () => timerCancelBtn.style.backgroundImage = "url('img/SysOpt.BtCancel.pressed.0.png')" );
-timerCancelBtn.addEventListener('mouseup', () => timerCancelBtn.style.backgroundImage = "url('img/SysOpt.BtCancel.normal.0.png')" );
+timerCancelBtn.addEventListener('mouseover', () => timerCancelBtn.style.backgroundImage = "url('" + BtCancelMouseOver.src + "')");
+timerCancelBtn.addEventListener('mouseleave', () => timerCancelBtn.style.backgroundImage = "url('" + BtCancelNormal.src + "')");
+timerCancelBtn.addEventListener('mousedown', () => timerCancelBtn.style.backgroundImage = "url('" + BtCancelPressed.src + "')");
+timerCancelBtn.addEventListener('mouseup', () => timerCancelBtn.style.backgroundImage = "url('" + BtCancelNormal.src + "')");
 
 
 const button = document.querySelector('.tooltip-button'); //쿼리셀렉터와 클래스네임의 차이점??
@@ -218,5 +219,16 @@ button.addEventListener('click', () => {
   tooltipText.classList.toggle('hidden');
 });
 
-
-
+function loadImage(url) {
+    const image = new Image();
+    image.src = url;
+  
+    return image;
+  }
+  
+  const BtOkMouseOver = loadImage('img/SysOpt.BtOK.mouseOver.0.png');
+  const BtOkNormal = loadImage('img/SysOpt.BtOK.normal.0.png');
+  const BtOkPressed = loadImage('img/SysOpt.BtOK.pressed.0.png');
+  const BtCancelMouseOver = loadImage('img/SysOpt.BtCancel.mouseOver.0.png');
+  const BtCancelNormal = loadImage('img/SysOpt.BtCancel.normal.0.png');
+  const BtCancelPressed = loadImage('img/SysOpt.BtCancel.pressed.0.png');
