@@ -6,6 +6,13 @@ const waitingClick = document.querySelectorAll('.waitingClick');
 const logo = document.getElementById('logo');
 const townIconWrapper = document.getElementById('townIcon-Wrapper');
 
+const townIcon = document.querySelectorAll('.townIcon');
+
+for (let i = 0; i < townIcon.length; i++) {
+    townIcon[i].addEventListener('mouseenter', event => event.target.classList.add('clickCursor'));
+    townIcon[i].addEventListener('mouseleave', event => event.target.classList.remove('clickCursor'));
+    townIcon[i].addEventListener('click', moveTown); 
+  }
 
 function onTaxi(){
     if (window.innerWidth < 1050) {
@@ -14,36 +21,18 @@ function onTaxi(){
     }
     if(taxiInfo.style.visibility == 'visible'){
         taxiInfo.style.visibility = 'hidden';
-        townIconWrapper.textContent = '';
     } else{
         taxiInfo.style.visibility = 'visible';
-        townIconWrapper.textContent = '';
         isTaxi = true;
     }
-    selectTown('헤네시스');
-    selectTown('페리온');
-    selectTown('커닝시티');
-    selectTown('엘리니아');
-    selectTown('슬리피우드');
 }
 
-function selectTown(townName){
-    const town = document.createElement('img');
-    town.id = townName;
-    town.className = 'waitingClick';
-    town.src = `img/${town.id}주문서.png`
-    townIconWrapper.append(town);
-    town.addEventListener('click', moveTown); //스코프 덕분에 이렇게 간결하게 쓸 수 있는건가?
-    town.addEventListener('mouseenter', event => event.target.classList.add('clickCursor'));
-    town.addEventListener('mouseleave', event => event.target.classList.remove('clickCursor'));  //맨 아래 코드랑 중복되는 느낌인데 해결할 수 았나?
-} 
 
 function moveTown(event){
     background.style.backgroundImage = `url('img/${event.target.id}.png')`; //바깥만 백틱 감싸면 안은 알아서 되나보다
     //background.style.backgroundImage = "url(`img/${event.target.id}.png`)"; 
     //백틱기호 안되는거 당연!! css에 맞게 줘야지.. 이거는 es6만의 문법이니 그런데 src는 됐잖아? 빠같에 싸져있어서 그랬나 이거는 안에 싸져있으니
     bgm.src = `music/${event.target.id}.mp3`;
-    townIconWrapper.innerHTML = '';
     taxiInfo.style.visibility = 'hidden';
     bgm.play();
     bgm.addEventListener('ended', function() { 

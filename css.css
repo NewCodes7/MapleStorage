@@ -67,9 +67,9 @@ body{
 
 #townIcon-Wrapper{
     position: relative;
-    width: 160px;
+    width: 180px;
     margin: auto;
-    top: 40%;
+    top: 45%;
 }
 
 .clickCursor{
@@ -331,9 +331,9 @@ body{
     animation-fill-mode:forwards;
     animation-iteration-count: 12;
   }
-  .on3s{
+  .on900s{
     background:#3232FF;
-    animation:progressBar 3s linear;
+    animation:progressBar 900s linear;
     animation-fill-mode:forwards;
     animation-iteration-count: 8;
   }

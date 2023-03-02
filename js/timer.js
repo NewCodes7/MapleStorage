@@ -48,6 +48,7 @@ function timerStart() {
     memoryStart = clock.innerText;
 
 //경쿠 카운트
+    let soundEffect;
     const timerNodeList = document.getElementsByName('timer');
     timerNodeList.forEach((node) => {
       if(node.checked)  {
@@ -59,7 +60,7 @@ function timerStart() {
         
         counting(); // start 눌렀을 때 바로 타이머 보이도록
         progressBar.classList.add(`on${timerSet}s`);
-        const soundEffect = new Audio(`soundEffect/sound${timerSet}.mp3`);
+        soundEffect = new Audio(`soundEffect/sound${timerSet}.mp3`);
         ticTac = setInterval(counting, 1000);
         reset = setInterval(() => {count=-1; soundEffect.play(); memoryExpcoupon+=1; }, timerSet*999); //왜 화살표 함수로?, 1000으로 했을 때 첫 주기에서 1초 더 홀딩함(4초 기다리고 바뀜)
         
@@ -96,6 +97,9 @@ function totalCounting(){
     const timerGetItemNodeList = document.getElementsByName('get-item');
     timerGetItemNodeList.forEach((node) => {
         if(node.checked){
+            soundEffect = new Audio('soundEffect/soundOverlap.mp3');
+
+
             progressArea2.style.display = 'block';
             let remainingTotalSeconds2 = 101;
             progressBar2.classList.add(`on100s`);
@@ -212,7 +216,6 @@ const tooltipText = document.querySelector('.tooltip-text');
 
 button.addEventListener('click', () => {
   tooltipText.classList.toggle('hidden');
-  console.log('hi');
 });
 
 

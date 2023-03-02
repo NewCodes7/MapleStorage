@@ -36,7 +36,14 @@
     <section class="scene1">
         <div class="option-container">
             <div id="taxiInfo" class="taxi_div positionChange" style="visibility:hidden;">
-            <div id="townIcon-Wrapper"></div>
+            <div id="townIcon-Wrapper">
+                <img src="img/헤네시스주문서.png" id="헤네시스" class="townIcon waitingClick">
+                <img src="img/페리온주문서.png" id="페리온" class="townIcon waitingClick">
+                <img src="img/커닝시티주문서.png" id="커닝시티" class="townIcon waitingClick">
+                <img src="img/엘리니아주문서.png" id="엘리니아" class="townIcon waitingClick">
+                <img src="img/슬리피우드주문서.png" id="슬리피우드" class="townIcon waitingClick">
+
+            </div>
             </div>
             <div id="quest" class="positionChange" style="visibility:hidden;">
                 
@@ -61,7 +68,7 @@
                 <input type="radio" id="600s" name="timer" value="600"  class="clickCursor">
                 <label for="600s">10분 경험치 쿠폰</label>
                 <br>
-                <input type="radio" id="900s" name="timer" value="3"  class="clickCursor">
+                <input type="radio" id="900s" name="timer" value="900"  class="clickCursor">
                 <label for="900s">15분 경험치 쿠폰</label>
                 <br>
                 <input type="radio" id="1200s" name="timer" value="1200"  class="clickCursor">
@@ -137,7 +144,7 @@
         </div>
     </section>
 
-    <div id="clock"></div>
+    <div id="clock" style="display: none;"></div>
     
     
     <script src="js/greeting.js"></script>
