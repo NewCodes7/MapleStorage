@@ -1,3 +1,5 @@
+
+
 const waitingClick = document.querySelectorAll('.waitingClick');
 const clickCursor = document.getElementById('clickCursor');
 
@@ -18,7 +20,8 @@ function addClickCursor(name){
 addClickCursor(waitingClick);
 
 
-
-if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+const isMobile = /iPhone|iPad|iPod|Android/i.test(window.navigator.userAgent);
+if(isMobile){
     clickCursor.remove();
-  }
+}
+
