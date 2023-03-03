@@ -15,7 +15,7 @@ for (let i = 0; i < townIcon.length; i++) {
   }
 
 function onTaxi(){
-    if (window.innerWidth < 1050) {
+    if (window.innerWidth < 1128) {
         deleteQuestWindow();
         deleteTimerWindow();
     }

@@ -24,4 +24,3 @@ const isMobile = /iPhone|iPad|iPod|Android/i.test(window.navigator.userAgent);
 if(isMobile){
     clickCursor.remove();
 }
-

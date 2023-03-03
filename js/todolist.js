@@ -77,7 +77,7 @@ todoInput.addEventListener("submit", handleTodo);
 todoNpc.addEventListener('click', popUpQuest);
 
 function popUpQuest(){
-    if (window.innerWidth < 1050) {
+    if (window.innerWidth < 1128) {
         deleteTaxiWindow();
         deleteTimerWindow();
     }

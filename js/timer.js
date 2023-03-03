@@ -184,7 +184,7 @@ function timerFirstScreen(){
 }
 
 function popUpTimer(){
-    if (window.innerWidth < 1050) {
+    if (window.innerWidth < 1128) {
         deleteTaxiWindow();
         deleteQuestWindow();
     }
