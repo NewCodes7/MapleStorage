@@ -36,10 +36,13 @@ function handleTodo(event){
     button.innerText = '🗑';
     button.style.border = 'none'
     button.style.backgroundColor = 'transparent'
-    button.classList.add('waitingClick2');
-    input.classList.add('waitingClick2');
+
+    label.classList.add('waitingClick2')
     const waitingClick2 = document.querySelectorAll('.waitingClick2');
+    input.style.cursor = 'none';
+    button.style.cursor = 'none';
     addClickCursor(waitingClick2);
+
     li.style.textAlign = 'left';
     li.style.marginTop = '2px';
 
@@ -67,6 +70,7 @@ function handleDelete(event){
     const resultTodo = listArray.filter((obj)=> obj.id !== parseInt(Xparent.id));
     listArray = resultTodo;
     localStorage.setItem('newtodo', JSON.stringify(resultTodo));
+    clickCursor.style.display = 'none';
 }
 
 todoInput.addEventListener("submit", handleTodo);
@@ -110,9 +114,10 @@ function popUpQuest(){
         button.innerText = '🗑';
         button.style.border = 'none'
         button.style.backgroundColor = 'transparent'
-        button.classList.add('waitingClick2');
-    input.classList.add('waitingClick2');
+        label.classList.add('waitingClick2')
     const waitingClick2 = document.querySelectorAll('.waitingClick2');
+    input.style.cursor = 'none';
+    button.style.cursor = 'none';
     addClickCursor(waitingClick2);
         li.style.textAlign = 'left';
         li.style.marginTop = '2px';

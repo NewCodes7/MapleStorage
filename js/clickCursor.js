@@ -16,3 +16,7 @@ function addClickCursor(name){
 }
 
 addClickCursor(waitingClick);
+
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+    clickCursor.remove();
+}
