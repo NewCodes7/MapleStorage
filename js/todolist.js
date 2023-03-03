@@ -91,7 +91,7 @@ function popUpQuest(){
         todoList.textContent = '';
     }
 
-    listArray = JSON.parse(localStorage.getItem('newtodo'));
+    listArray = JSON.parse(localStorage.getItem('newtodo')) || [];
 
     if(listArray.length != 0){    
         let i = 0;
