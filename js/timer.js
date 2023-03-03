@@ -33,12 +33,10 @@ let memoryExpcoupon = 0;
 let memoryItem = 0;
 
 const resultInfo = document.getElementsByClassName('resultInfo');
-
+const soundStart = new Audio('soundEffect/Start.mp3');
 
 
 function timerStart() {
-
-    const soundStart = new Audio('soundEffect/Start.mp3');
     soundStart.play();
 
     clickCursor.style.display = 'none';
