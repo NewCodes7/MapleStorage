@@ -1,6 +1,5 @@
 const todoInput = document.querySelector(".todo-input");
 const todo = document.querySelector("#todo");
-const list = document.querySelector("list");
 const todoList = document.querySelector(".todo-list");
 let listArray = [];
 const todoNpc = document.getElementById('todoNpc');
@@ -15,6 +14,7 @@ function handleTodo(event){
         id: Date.now(),
     };
     listArray.push(newTodo);
+    console.log(listArray);
     localStorage.setItem('newtodo', JSON.stringify(listArray));
     todo.value = '';
     
