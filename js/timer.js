@@ -37,6 +37,10 @@ const resultInfo = document.getElementsByClassName('resultInfo');
 
 
 function timerStart() {
+
+    const soundStart = new Audio('soundEffect/Start.mp3');
+    soundStart.play();
+
     clickCursor.style.display = 'none';
     timerStartBtn.style.cursor = '';
 
