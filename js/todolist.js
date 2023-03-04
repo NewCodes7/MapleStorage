@@ -6,12 +6,15 @@ const todoNpc = document.getElementById('todoNpc');
 const quest = document.getElementById('quest');
 const questHidden = document.getElementById('quest-hidden');
 
+let memoryCheck = 0;
+
 function handleTodo(event){
     event.preventDefault();
     //배열 형태로 저장
     const newTodo = {
         text: todo.value,
         id: Date.now(),
+        check: false,
     };
     listArray.push(newTodo);
     localStorage.setItem('newtodo', JSON.stringify(listArray));
@@ -36,6 +39,9 @@ function handleTodo(event){
     button.style.border = 'none'
     button.style.backgroundColor = 'transparent'
 
+    li.classList.add(memoryCheck);
+    memoryCheck += 1;
+
     label.classList.add('waitingClick2')
     const waitingClick2 = document.querySelectorAll('.waitingClick2');
     input.style.cursor = 'none';
@@ -56,11 +62,18 @@ function handleTodo(event){
 function handleComplete(event){
     const isChecked = event.target.checked;
     const liText = event.target.nextSibling;
+
+    let whoIsChecked = event.target.parentElement.parentElement.classList[0];
+    listArray = JSON.parse(localStorage.getItem('newtodo'));
+
     if(isChecked){
         liText.classList.add('strikeThrough');
+        listArray[whoIsChecked].check = true;
     } else {
         liText.classList.remove('strikeThrough');
+        listArray[whoIsChecked].check = false;
     }
+    localStorage.setItem('newtodo', JSON.stringify(listArray));
 }
 
 function handleDelete(event){
@@ -81,6 +94,7 @@ function popUpQuest(){
         deleteTimerWindow();
     }
     
+    memoryCheck = 0;
 
     if(quest.style.visibility == 'visible'){
         quest.style.visibility = 'hidden';
@@ -118,6 +132,15 @@ function popUpQuest(){
     input.style.cursor = 'none';
     button.style.cursor = 'none';
     addClickCursor(waitingClick2);
+
+    if(listArray[i].check){
+        span.classList.add('strikeThrough');
+        input.checked = true;
+    } 
+
+    li.classList.add(memoryCheck);
+    memoryCheck += 1;
+
         li.style.textAlign = 'left';
         li.style.marginTop = '2px';
     
