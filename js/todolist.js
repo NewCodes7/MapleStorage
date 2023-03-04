@@ -14,7 +14,6 @@ function handleTodo(event){
         id: Date.now(),
     };
     listArray.push(newTodo);
-    console.log(listArray);
     localStorage.setItem('newtodo', JSON.stringify(listArray));
     todo.value = '';
     
