@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0WNSMQZ6EK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0WNSMQZ6EK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-0WNSMQZ6EK');
-</script>
+      function gtag () {dataLayer.push(arguments);}
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2219040305096502"
-     crossorigin="anonymous"></script>
+      gtag('js', new Date());
+
+      gtag('config', 'G-0WNSMQZ6EK');
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2219040305096502"
+            crossorigin="anonymous"></script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,34 +25,33 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
-      </style>
+    </style>
 </head>
 
 
-
 <body>
-    <header>
-        <img src="img/MapleStory_Logo.png" id="logo" class="waitingClick">
-    </header>
+<header>
+    <img src="img/MapleStory_Logo.png" id="logo" class="waitingClick">
+</header>
 
-    <div id="background"></div>
-    <audio id="bgm" controls src="music/(구)로그인.mp3"></audio>
-    
-    <img id="clickCursor" src="img/Cursor.1.gif">
+<div id="background"></div>
+<audio id="bgm" controls src="music/(구)로그인.mp3"></audio>
 
-    <form class="logIn-form">
-        <input
-        id="input" 
-        type="text"
-        required
-        maxlength="15"
-        placeholder="닉네임을 입력해주세요!"/>
-        <button id="login">로그인</button>
-    </form>
+<img id="clickCursor" src="img/Cursor.1.gif">
 
-    <section class="scene1">
-        <div class="option-container">
-            <div id="taxiInfo" class="taxi_div positionChange" style="visibility:hidden;">
+<form class="logIn-form">
+    <input
+            id="input"
+            type="text"
+            required
+            maxlength="15"
+            placeholder="닉네임을 입력해주세요!"/>
+    <button id="login">로그인</button>
+</form>
+
+<section class="scene1">
+    <div class="option-container">
+        <div id="taxiInfo" class="taxi_div positionChange" style="visibility:hidden;">
             <div id="townIcon-Wrapper">
                 <img src="img/헤네시스주문서.png" id="헤네시스" class="townIcon waitingClick">
                 <img src="img/페리온주문서.png" id="페리온" class="townIcon waitingClick">
@@ -59,34 +60,34 @@
                 <img src="img/슬리피우드주문서.png" id="슬리피우드" class="townIcon waitingClick">
 
             </div>
-            </div>
-            <div id="quest" class="positionChange" style="visibility:hidden;">
-                
-                <form class="todo-input todo-text">
+        </div>
+        <div id="quest" class="positionChange" style="visibility:hidden;">
+
+            <form class="todo-input todo-text">
                 <div id="greeting"></div>
                 <input
-                id="todo"
-                type="text"
-                required
-                placeholder="할 일을 입력해주세요!"/>
+                        id="todo"
+                        type="text"
+                        required
+                        placeholder="할 일을 입력해주세요!"/>
             </form>
             <div class="todo-list"></div>
-                
-            </div>
 
-            <div id="TIMER" class="positionChange" style="visibility:hidden;">
-        
+        </div>
+
+        <div id="TIMER" class="positionChange" style="visibility:hidden;">
+
             <!-- <input type="radio" id="100s" name="timer" value="100"  class="timer-text">
             <label for="100s" class="timer-text">100초 아이템 수확</label>
             <br> -->
             <div id="timer-option">
-                <input type="radio" id="600s" name="timer" value="600"  class="waitingClick">
+                <input type="radio" id="600s" name="timer" value="600" class="waitingClick">
                 <label for="600s" class="waitingClick">10분 경험치 쿠폰</label>
                 <br>
-                <input type="radio" id="900s" name="timer" value="900"  class="waitingClick">
+                <input type="radio" id="900s" name="timer" value="900" class="waitingClick">
                 <label for="900s" class="waitingClick">15분 경험치 쿠폰</label>
                 <br>
-                <input type="radio" id="1200s" name="timer" value="1200"  class="waitingClick">
+                <input type="radio" id="1200s" name="timer" value="1200" class="waitingClick">
                 <label for="1200s" class="waitingClick">20분 경험치 쿠폰</label>
                 <br>
                 <input type="radio" id="1800s" name="timer" value="1800" class="waitingClick">
@@ -99,25 +100,17 @@
                 <input type="checkbox" id="100s" name="get-item" class="waitingClick">
                 <label for="100s" class="waitingClick">100초 아이템 줍기</label>
             </div>
-        
 
 
-                
-                    <div class="btn-wrapper">
-                        <button onclick="timerStart()" id="timerStartBtn" class="ActivationStart waitingClick"></button>
-                        <button onclick="timerCancel()" id="timerCancelBtn" class="DeactivationCancel" disabled></button>
-                    <div id="tooltip">
-                                <button class="tooltip-button waitingClick"></button>
-                                <div class="tooltip-text" class="hidden">2시간 후 타이머가 자동 종료됩니다!</div>
-                            </div>
-                    </div>
-    
-                    
-                            
-                      
-                    
-                
-                
+            <div class="btn-wrapper">
+                <button onclick="timerStart()" id="timerStartBtn" class="ActivationStart waitingClick"></button>
+                <button onclick="timerCancel()" id="timerCancelBtn" class="DeactivationCancel" disabled></button>
+                <div id="tooltip">
+                    <button class="tooltip-button waitingClick"></button>
+                    <div class="tooltip-text" class="hidden">2시간 후 타이머가 자동 종료됩니다!</div>
+                </div>
+            </div>
+
 
             <div id="tictac-area">
                 <div id="totalTime"></div>
@@ -125,7 +118,7 @@
                     <div id="remainingTime"></div>
                     <div id="progressBar"></div>
                 </div>
-                
+
                 <div id="progress-area2">
                     <div id="remainingTime2"></div>
                     <div id="progressBar2"></div>
@@ -139,41 +132,40 @@
                 <div><img src="img/expcoupon.png" alt=""><span id="result-expcoupon" class="resultInfo"></span></div>
                 <div><img src="img/meso.png" alt=""><span id="result-item" class="resultInfo"></span></div>
             </div>
-            
-        </div>
-    
-    
-    
-            </div>
-        </div>
-    </section>
-    
-    <section class="scene2">
-        <div class="npc-absolute">
-            <div class="npc-container">
-                <img id="taxi" class="waitingClick" src="img/taxi.png">
-                <!-- <img src="img/character.png" id="character"> -->
-                <img src="img/todoNpc.gif" id="todoNpc" class="waitingClick">
-                <img src="img/timerNpc.gif" id="timerNpc" class="waitingClick">
-            </div class="npc-container">
-        </div>
-    </section>
 
-    <div id="clock" style="display: none;"></div>
-    <footer>
-        <address>&nbsp;hani103201@naver.com&nbsp;</address>
-    </footer>
-    
-    <script src="js/greeting.js"></script>
-    <script src="js/clock.js"></script>
-    <script src="js/todolist.js"></script>
-    <script src="js/taxi.js"></script>
-    <script src="js/timer.js"></script>
-    <script src="js/character.js"></script>
-    <script src="js/toggle.js"></script>
-    <script src="js/window.js"></script>
-    <script src="js/createImage.js"></script>
-    <script src="js/clickCursor.js"></script>
-    
+        </div>
+
+
+    </div>
+    </div>
+</section>
+
+<section class="scene2">
+    <div class="npc-absolute">
+        <div class="npc-container">
+            <img id="taxi" class="waitingClick" src="img/taxi.png">
+            <!-- <img src="img/character.png" id="character"> -->
+            <img src="img/todoNpc.gif" id="todoNpc" class="waitingClick">
+            <img src="img/timerNpc.gif" id="timerNpc" class="waitingClick">
+        </div class="npc-container">
+    </div>
+</section>
+
+<div id="clock" style="display: none;"></div>
+<!--<footer>-->
+<!--    <address>&nbsp;hani103201@naver.com&nbsp;</address>-->
+<!--</footer>-->
+
+<script src="js/greeting.js"></script>
+<script src="js/clock.js"></script>
+<script src="js/todolist.js"></script>
+<script src="js/taxi.js"></script>
+<script src="js/timer.js"></script>
+<script src="js/character.js"></script>
+<script src="js/toggle.js"></script>
+<script src="js/window.js"></script>
+<script src="js/createImage.js"></script>
+<script src="js/clickCursor.js"></script>
+
 </body>
 </html>
