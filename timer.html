@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0WNSMQZ6EK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag () {dataLayer.push(arguments);}
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-0WNSMQZ6EK');
+  </script>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2219040305096502"
+          crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="timer.css">
+  <title>MapleStorage</title>
+  <link rel="shortcut icon" href="#">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+  </style>
+</head>
+
+<body>
+
+<div id="background">
+  <div id="TIMER">
+    <div id="timer-option-area">
+      <input type="radio" id="600s" name="timer" value="600" class="waitingClick">
+      <label for="600s" class="waitingClick">10분 경험치 쿠폰</label>
+      <br>
+      <input type="radio" id="900s" name="timer" value="900" class="waitingClick">
+      <label for="900s" class="waitingClick">15분 경험치 쿠폰</label>
+      <br>
+      <input type="radio" id="1200s" name="timer" value="1200" class="waitingClick">
+      <label for="1200s" class="waitingClick">20분 경험치 쿠폰</label>
+      <br>
+      <input type="radio" id="1800s" name="timer" value="1800" class="waitingClick">
+      <label for="1800s" class="waitingClick">30분 경험치 쿠폰</label>
+      <br>
+      <input type="radio" id="3600s" name="timer" value="3600" class="waitingClick">
+      <label for="3600s" class="waitingClick">60분 경험치 쿠폰</label>
+      <br>
+      <input type="checkbox" id="100s" name="get-item" class="waitingClick">
+      <label for="100s" class="waitingClick">100초 아이템 줍기</label>
+    </div>
+
+    <div class="btn-area">
+      <button onclick="timerStart()" id="timerStartBtn" class="ActivationStart waitingClick"></button>
+      <button onclick="timerCancel()" id="timerCancelBtn" class="DeactivationCancel" disabled></button>
+      <div id="tooltip">
+        <button class="tooltip-button waitingClick"></button>
+        <div class="tooltip-text" class="hidden">2시간 후 타이머가 자동 종료됩니다!</div>
+      </div>
+    </div>
+
+    <div id="tictac-area">
+      <div id="totalTime"></div>
+      <div id="progress-area">
+        <div id="remainingTime"></div>
+        <div id="progressBar"></div>
+      </div>
+
+      <div id="progress-area2">
+        <div id="remainingTime2"></div>
+        <div id="progressBar2"></div>
+      </div>
+    </div>
+
+    <div id="result-area">
+      <div id="result-starttime" class="resultInfo"></div>
+      <div id="result-stoptime" class="resultInfo"></div>
+      <div id="result-totalcount" class="resultInfo"></div>
+      <div><img src="img/expcoupon.png" alt=""><span id="result-expcoupon" class="resultInfo"></span></div>
+      <div><img src="img/meso.png" alt=""><span id="result-item" class="resultInfo"></span></div>
+    </div>
+  </div>
+</div>
+
+<img id="clickCursor" src="img/Cursor.1.gif">
+<div id="clock" style="display: none;"></div>
+
+<script src="js/timer.js"></script>
+<script src="js/window.js"></script>
+<script src="js/clock.js"></script>
+<script src="js/createImage.js"></script>
+<script src="js/clickCursor.js"></script>
+
+</body>
+</html>
