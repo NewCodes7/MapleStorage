@@ -232,3 +232,5 @@ timerCancelBtn.addEventListener('mouseover', () => timerCancelBtn.style.backgrou
 timerCancelBtn.addEventListener('mouseleave', () => timerCancelBtn.style.backgroundImage = 'url(\'' + BtCancelNormal.src + '\')');
 timerCancelBtn.addEventListener('mousedown', () => timerCancelBtn.style.backgroundImage = 'url(\'' + BtCancelPressed.src + '\')');
 timerCancelBtn.addEventListener('mouseup', () => timerCancelBtn.style.backgroundImage = 'url(\'' + BtCancelNormal.src + '\')');
+
+tooltipText.classList.add('hidden');
