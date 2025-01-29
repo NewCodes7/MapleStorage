@@ -31,7 +31,7 @@
     window.onload = function() {
       const popup = window.open("timer.html", "_blank", "width=450,height=315,toolbar=no,menubar=no,scrollbars=no,resizable=no");
       if (popup) {  // 팝업이 성공적으로 열렸을 때만 실행
-        history.replaceState(null, "", "/");  // URL 변경하여 루트로 리다이렉트
+        window.location.href = '/';
       }
     };
   </script>
